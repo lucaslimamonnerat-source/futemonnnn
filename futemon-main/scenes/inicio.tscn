@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="17_miq2r"]
 [ext_resource type="PackedScene" uid="uid://dsaobkia0n4j" path="res://person/bush.tscn" id="18_75f84"]
 [ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="20_wjo3y"]
+[ext_resource type="PackedScene" uid="uid://brce2wawbh4kc" path="res://scenes/npc.tscn" id="22_xmcgw"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hwoes"]
 
@@ -3943,3 +3944,6 @@ scale = Vector2(0.18, 0.18)
 position = Vector2(-174, -361)
 scale = Vector2(1.2, 1.218)
 cena_destino = "res://scenes/Dentro.tscn"
+
+[node name="npc" parent="." unique_id=773783968 instance=ExtResource("22_xmcgw")]
+position = Vector2(-151, -104)

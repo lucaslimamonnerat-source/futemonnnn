@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://doin254c401aj"]
+
+[ext_resource type="Script" uid="uid://3ekmr43jgvuy" path="res://dialogue/dialogueplayer.gd" id="1_3n4vj"]
+[ext_resource type="Texture2D" uid="uid://du3c4uovpl0e3" path="res://sprites/Inventory/healthbarUnder.png" id="1_jwyou"]
+
+[node name="Dialogue" type="Control" unique_id=92134385]
+layout_mode = 3
+anchor_left = 0.013
+anchor_top = 0.037
+anchor_right = 0.013
+anchor_bottom = 0.037
+offset_left = -29.64
+offset_top = -21.64
+offset_right = 31.36
+offset_bottom = 16.36
+script = ExtResource("1_3n4vj")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2105130415]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19500001
+anchor_top = -0.328
+anchor_right = 0.19500001
+anchor_bottom = -0.328
+offset_left = -35.895
+offset_top = 8.464001
+offset_right = 62.105
+offset_bottom = 66.464005
+texture = ExtResource("1_jwyou")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect" unique_id=747372215]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 75.0
+offset_bottom = 40.0
+scale = Vector2(0.4, 0.4)
+text = "ricardo:
+"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect" unique_id=1779602284]
+layout_mode = 0
+offset_left = 9.999999
+offset_top = 13.0
+offset_right = 283.3333
+offset_bottom = 162.99998
+scale = Vector2(0.3, 0.3)
+text = "                 
+não é vc, sou eu..."
