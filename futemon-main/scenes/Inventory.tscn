@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://cowkk0ukxb8fl"]
+
+[ext_resource type="Script" uid="uid://chb38ly1s16ed" path="res://scripts/inventory.gd" id="1_elp5n"]
+[ext_resource type="Texture2D" uid="uid://c6jvwghqs5daf" path="res://sprites/Inventory/Sample-InventorySlotsSet.png" id="1_kh8if"]
+[ext_resource type="Texture2D" uid="uid://doeuvvpmsraye" path="res://sprites/Inventory/hotbar_selector.png" id="3_njucy"]
+[ext_resource type="Texture2D" uid="uid://ngod2rwlo43i" path="res://sprites/Inventory/Axe.png" id="4_f0lgf"]
+[ext_resource type="Texture2D" uid="uid://cldfhbrbureee" path="res://sprites/Inventory/AxeGold.png" id="5_ehjro"]
+[ext_resource type="Texture2D" uid="uid://d2ml1hpn6rjs" path="res://sprites/Inventory/FishingRod.png" id="6_gt370"]
+[ext_resource type="Texture2D" uid="uid://cdtf224o70n11" path="res://sprites/Inventory/Pickaxe.png" id="7_w4sxg"]
+[ext_resource type="Texture2D" uid="uid://271qrsxlj3fr" path="res://sprites/Inventory/PickaxeGold.png" id="8_m0rna"]
+[ext_resource type="Texture2D" uid="uid://bosk7jv7srsqu" path="res://sprites/Inventory/Shovel.png" id="9_roh3e"]
+[ext_resource type="Texture2D" uid="uid://bppmgqcnbta53" path="res://sprites/Inventory/ShovelGold.png" id="10_3hw54"]
+[ext_resource type="Texture2D" uid="uid://b5yyrcdacu85p" path="res://sprites/Inventory/HealthPotionMedium.png" id="11_hhcph"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1132434581 groups=["Inventory", "Inventoryy"]]
+script = ExtResource("1_elp5n")
+
+[node name="Control" type="Control" parent="." unique_id=1882953546]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control" unique_id=485910287]
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 43.0
+offset_right = 308.0
+offset_bottom = 279.0
+scale = Vector2(2.0763886, 1.5571222)
+texture = ExtResource("1_kh8if")
+region_rect = Rect2(27.569416, -0.19333744, 75.64844, 74.93241)
+
+[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect" unique_id=1144983486]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 68.0
+offset_bottom = 67.0
+texture = ExtResource("3_njucy")
+
+[node name="Axe" type="Sprite2D" parent="Control/NinePatchRect" unique_id=112137011]
+position = Vector2(37.08362, 37.248207)
+scale = Vector2(2.4184968, 3.2250128)
+texture = ExtResource("4_f0lgf")
+
+[node name="AxeGold" type="Sprite2D" parent="Control/NinePatchRect" unique_id=120328787]
+position = Vector2(91.02343, 37.2482)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("5_ehjro")
+
+[node name="FishingRod" type="Sprite2D" parent="Control/NinePatchRect" unique_id=1055382959]
+position = Vector2(145.92642, 36.60598)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("6_gt370")
+
+[node name="Pickaxe" type="Sprite2D" parent="Control/NinePatchRect" unique_id=1644924260]
+position = Vector2(198.42143, 36.60599)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("7_w4sxg")
+
+[node name="PickaxeGold" type="Sprite2D" parent="Control/NinePatchRect" unique_id=1677461003]
+position = Vector2(38.52841, 91.19387)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("8_m0rna")
+
+[node name="Shovel" type="Sprite2D" parent="Control/NinePatchRect" unique_id=2047235297]
+position = Vector2(91.98661, 92.47829)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("9_roh3e")
+
+[node name="ShovelGold" type="Sprite2D" parent="Control/NinePatchRect" unique_id=2053691493]
+position = Vector2(144.96323, 92.47827)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("10_3hw54")
+
+[node name="Axe2" type="Sprite2D" parent="Control/NinePatchRect" unique_id=678549830]
+position = Vector2(37.167377, 145.21915)
+scale = Vector2(2.4184968, 3.2250128)
+texture = ExtResource("4_f0lgf")
+
+[node name="AxeGold2" type="Sprite2D" parent="Control/NinePatchRect" unique_id=1991234548]
+position = Vector2(91.10719, 145.21915)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("5_ehjro")
+
+[node name="FishingRod2" type="Sprite2D" parent="Control/NinePatchRect" unique_id=619182691]
+position = Vector2(146.01018, 144.57692)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("6_gt370")
+
+[node name="Pickaxe2" type="Sprite2D" parent="Control/NinePatchRect" unique_id=1737382251]
+position = Vector2(198.50519, 144.57693)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("7_w4sxg")
+
+[node name="PickaxeGold2" type="Sprite2D" parent="Control/NinePatchRect" unique_id=815364315]
+position = Vector2(38.61217, 199.16481)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("8_m0rna")
+
+[node name="Shovel2" type="Sprite2D" parent="Control/NinePatchRect" unique_id=595053504]
+position = Vector2(92.07037, 200.44922)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("9_roh3e")
+
+[node name="ShovelGold2" type="Sprite2D" parent="Control/NinePatchRect" unique_id=1180292495]
+position = Vector2(145.04698, 200.44922)
+scale = Vector2(2.418, 3.221)
+texture = ExtResource("10_3hw54")
+
+[node name="HealthPotionMedium" type="Sprite2D" parent="Control/NinePatchRect" unique_id=1145757839]
+position = Vector2(198.90302, 201.01186)
+scale = Vector2(2.418, 2.418)
+texture = ExtResource("11_hhcph")
+
+[node name="HealthPotionMedium2" type="Sprite2D" parent="Control/NinePatchRect" unique_id=405494437]
+position = Vector2(197.45822, 93.120514)
+scale = Vector2(2.418, 2.418)
+texture = ExtResource("11_hhcph")

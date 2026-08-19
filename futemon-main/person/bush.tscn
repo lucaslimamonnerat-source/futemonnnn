@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dsaobkia0n4j"]
+
+[ext_resource type="Script" uid="uid://bx8t771tceh4s" path="res://bush.gd" id="1_hd4iq"]
+[ext_resource type="Texture2D" uid="uid://bodqfquectvsj" path="res://sprites/Cenario/matoAAAAA.png" id="2_hd4iq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjrdm"]
+size = Vector2(64, 66)
+
+[node name="Bush" type="Area2D" unique_id=1769287671 groups=["mato"]]
+script = ExtResource("1_hd4iq")
+
+[node name="Spriteaa2D" type="Sprite2D" parent="." unique_id=907828469]
+texture_filter = 1
+position = Vector2(0, -7.9999995)
+texture = ExtResource("2_hd4iq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=6854561]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_rjrdm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

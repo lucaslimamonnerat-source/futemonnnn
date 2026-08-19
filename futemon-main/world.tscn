@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://doatipaid7icl"]
+
+[ext_resource type="PackedScene" uid="uid://c38ca7yuye88s" path="res://scenes/tiles.tscn" id="1_f3sb7"]
+
+[node name="World" type="Node2D" unique_id=2020764003]
+
+[node name="Tiles" parent="." unique_id=1814617504 instance=ExtResource("1_f3sb7")]
+position = Vector2(-469.35858, 423.86627)
