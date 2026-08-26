@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://4yl7oa5op7cn"]
+
+[ext_resource type="Texture2D" uid="uid://b7cllmsle3gf1" path="res://sprites/Cenario/Fundo_selector.png" id="1_ujufw"]
+[ext_resource type="Texture2D" uid="uid://cen2amocwv1jl" path="res://sprites/Cenario/campfire_16x16.png" id="2_30uct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuaan"]
+atlas = ExtResource("2_30uct")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi0aa"]
+atlas = ExtResource("2_30uct")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ehi"]
+atlas = ExtResource("2_30uct")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm1b6"]
+atlas = ExtResource("2_30uct")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_86ap7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuaan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi0aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2ehi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm1b6")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=189281058]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1490187882]
+position = Vector2(641, 359)
+texture = ExtResource("1_ujufw")
+
+[node name="fogueira" type="Sprite2D" parent="." unique_id=1216160585]
+position = Vector2(630, 426.00003)
+scale = Vector2(5, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fogueira" unique_id=584219677]
+position = Vector2(-3.7999997, 2.7999935)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_86ap7")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.50874823
