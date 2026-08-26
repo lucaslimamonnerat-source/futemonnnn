@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://dqdtkw12gvth3"]
+
+[ext_resource type="Script" uid="uid://u5rgjhwktxc3" path="res://scenes/menu_start.gd" id="1_ccu5i"]
+[ext_resource type="Texture2D" uid="uid://bn50fh1rhrrwi" path="res://sprites/Fazendo/mapaEX.webp" id="2_ncqf3"]
+[ext_resource type="FontFile" uid="uid://bj8ekx5a0ddov" path="res://sprites/fonts/GrapeSoda.ttf" id="3_4jmj5"]
+[ext_resource type="FontFile" uid="uid://bd0id0v1iksjl" path="res://sprites/fonts/The Amazing Spider-Man.ttf" id="4_phe8i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tc6ix"]
+texture = ExtResource("2_ncqf3")
+modulate_color = Color(1, 1, 1, 0.23921569)
+
+[sub_resource type="Theme" id="Theme_okbob"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egsp4"]
+bg_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jmj5"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_cp8n1"]
+font = ExtResource("4_phe8i")
+font_size = 120
+
+[node name="MenuStart" type="Control" unique_id=349765110]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ccu5i")
+
+[node name="Panel" type="Panel" parent="." unique_id=342155554]
+layout_mode = 0
+offset_right = 1278.1727
+offset_bottom = 725.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_tc6ix")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1875475800]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.38300002
+anchor_right = 0.5
+anchor_bottom = 0.38300002
+offset_left = -171.0
+offset_top = 14.23999
+offset_right = 171.0
+offset_bottom = 265.49
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1865532126]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_okbob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4jmj5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_egsp4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4jmj5")
+text = "AI DENTO"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1028295471]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_okbob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4jmj5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_egsp4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4jmj5")
+text = "CONTINUARRR"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1666621867]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_okbob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4jmj5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_egsp4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4jmj5")
+text = "BAGAÇAS"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1595097905]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_okbob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4jmj5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_egsp4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4jmj5")
+text = "VAZAR"
+
+[node name="Label" type="Label" parent="." unique_id=649577095]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -199.0
+offset_top = 20.0
+offset_right = 204.0
+offset_bottom = 174.0
+grow_horizontal = 2
+text = "FUTEMON"
+label_settings = SubResource("LabelSettings_cp8n1")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_quit_pressed"]

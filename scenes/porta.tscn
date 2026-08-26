@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b8almicvqiyt0"]
+
+[ext_resource type="Texture2D" uid="uid://burl5r2v242xp" path="res://sprites/Cenario/CasaWIP.png" id="1_fctyj"]
+[ext_resource type="Script" uid="uid://b250honx8ps67" path="res://scripts/porta.gd" id="1_hlcnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgwyy"]
+size = Vector2(17, 32)
+
+[node name="Porta" type="Area2D" unique_id=837879500]
+script = ExtResource("1_hlcnn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1045834510]
+position = Vector2(8.5, 47)
+shape = SubResource("RectangleShape2D_vgwyy")
+
+[node name="CasaWip" type="Sprite2D" parent="." unique_id=1725659398]
+position = Vector2(9, 32)
+texture = ExtResource("1_fctyj")
+region_enabled = true
+region_rect = Rect2(302.9428, -0.61190796, 17.55481, 64)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://fhi5yiug7grf"]
+
+[ext_resource type="Texture2D" uid="uid://c6d17ocacqed7" path="res://sprites/Futmon/FlamengomonDeFrente1.png" id="1_5kd6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hu87"]
+size = Vector2(261, 303)
+
+[node name="Urubu" type="CharacterBody2D" unique_id=1376468206]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=432284822]
+texture = ExtResource("1_5kd6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1343709172]
+position = Vector2(14.5, 99.5)
+shape = SubResource("RectangleShape2D_1hu87")

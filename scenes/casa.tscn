@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bm2q5pbxrtrq3"]
+
+[ext_resource type="Texture2D" uid="uid://burl5r2v242xp" path="res://sprites/Cenario/CasaWIP.png" id="1_16s4k"]
+[ext_resource type="Script" uid="uid://dxlhl37it5oc1" path="res://scenes/casa.gd" id="1_ias33"]
+[ext_resource type="PackedScene" uid="uid://b8almicvqiyt0" path="res://scenes/porta.tscn" id="2_l7c5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(62, 40)
+
+[node name="Casa" type="StaticBody2D" unique_id=1167718415]
+script = ExtResource("1_ias33")
+cena_destino = "res://scenes/inicio.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270998772]
+position = Vector2(252, 217)
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="CasaWip" type="Sprite2D" parent="." unique_id=1670147750]
+position = Vector2(252, 214)
+texture = ExtResource("1_16s4k")
+hframes = 4
+
+[node name="Porta" parent="." unique_id=837879500 instance=ExtResource("2_l7c5q")]
+position = Vector2(244, 181)
+
+[node name="frentedaporta" type="Marker2D" parent="." unique_id=279279598]
+position = Vector2(253, 252)
