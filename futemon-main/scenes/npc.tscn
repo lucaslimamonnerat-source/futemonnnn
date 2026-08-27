@@ -164,7 +164,7 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_toidv"]
 radius = 26.076809
 
-[node name="npc" type="CharacterBody2D" unique_id=773783968]
+[node name="npc" type="CharacterBody2D" unique_id=773783968 groups=["npc"]]
 top_level = true
 script = ExtResource("1_abqhh")
 
@@ -185,10 +185,10 @@ shape = SubResource("CircleShape2D_toidv")
 autostart = true
 
 [node name="Dialogue" parent="." unique_id=92134385 instance=ExtResource("3_rv78h")]
-offset_left = -7.0
-offset_top = 26.0
-offset_right = 56.0
-offset_bottom = 67.0
+offset_left = -27.0
+offset_top = 27.0
+offset_right = 36.0
+offset_bottom = 68.0
 d_file = "res://dialogue/ricardodialogo.json"
 
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]

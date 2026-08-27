@@ -4,7 +4,7 @@ var situationAtual = "idle"
 var title_size = 16
 var moving = false
 var input_dir
-var podeAndar = 1
+@export var podeAndar: int = 1
 var matos = []
 var porta_proxima = null
 var interagindo = false

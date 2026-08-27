@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const speed = 30
+var perm = 1
 
 enum {
 	IDLE,
@@ -21,6 +22,7 @@ var player_in_chat_zone = false
 func _ready():
 	randomize()
 	start_pos = position
+	$Dialogue.dialogue_finished.connect(_on_dialogue_dialogue_finished)
 
 func _process(delta):
 	if current_state == IDLE or current_state == NEW_DIR:
@@ -44,13 +46,14 @@ func _process(delta):
 			MOVE:
 				move(delta)
 
-	# Só inicia diálogo se o jogador estiver na área
-	if Input.is_action_just_pressed("chat") and player_in_chat_zone:
+	# Só inicia diálogo se o jogador estiver na área E não houver diálogo em andamento
+	if Input.is_action_just_pressed("ui_accept") and perm and player_in_chat_zone and not is_chatting and not $Dialogue.d_active:
 		print("chatting with npc")
 		$Dialogue.start()
 		is_roaming = false
 		is_chatting = true
 		$AnimatedSprite2D.play("idle")
+		perm = 0
 
 func choose(array):
 	array.shuffle()
@@ -75,4 +78,4 @@ func _on_timer_timeout() -> void:
 
 func _on_dialogue_dialogue_finished():
 	is_chatting = false
-	is_roaming = true   # ou false, dependendo se quer que o NPC volte a andar
+	is_roaming = true
