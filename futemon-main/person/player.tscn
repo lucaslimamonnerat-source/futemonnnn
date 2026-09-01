@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://q7hhnxok5ugc" path="res://sprites/Milena2.0/MilenaRightWalk.png" id="5_ft188"]
 [ext_resource type="Texture2D" uid="uid://lfqeacsgcmrn" path="res://sprites/Milena2.0/MilenaFrontWalk.png" id="6_ihile"]
 [ext_resource type="Texture2D" uid="uid://bepprq88ri2g0" path="res://sprites/Milena2.0/MilenaBackWalk.png" id="7_pu3in"]
+[ext_resource type="PackedScene" uid="uid://dlhj70yi3rm8f" path="res://scenes/hud.tscn" id="8_kw35o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ybkb"]
 atlas = ExtResource("2_ahy3w")
@@ -196,3 +197,7 @@ collision_mask = 16
 position = Vector2(0, 7.000001)
 scale = Vector2(0.4774629, 0.4774629)
 shape = SubResource("CircleShape2D_86ap7")
+
+[node name="HUD" parent="." unique_id=816163966 instance=ExtResource("8_kw35o")]
+offset = Vector2(25.77, 11.19)
+transform = Transform2D(1, 0, 0, 1, 25.77, 11.19)

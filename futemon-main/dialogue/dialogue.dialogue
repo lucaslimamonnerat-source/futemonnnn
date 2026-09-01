@@ -1,13 +1,18 @@
 ~ start
 Nathan: [[Hi|Hello|Howdy]], seja bem vindo.
 Nathan: Escolha.	
-- Charmander
-	Nathan: Melhor escolha.
-- Squirtle
-	Nathan: Aceitável.
-- Bulbassauro
-	Nathan: Péssima escolha.
+if State.coins_state == 0:
+	Nathan: Não podemos negociar
+else:
+	if State.coins_state < 10:
+		Nathan: Não tem grana suficiente
+	else:
+		Nathan: O que gostaria de comprar?
+		- Maça (10 moedas)
+			set State.coins_state -= 10
+		- Laranja (5 moedas)
+			set State.coins_state -= 5
 #- Start again => start
-- Fugir => END
+#- Fugir => END
 Nathan: Siga em frente senhor.
 => END

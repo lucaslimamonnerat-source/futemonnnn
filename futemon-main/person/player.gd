@@ -11,7 +11,7 @@ var interagindo = false
 var cena_destino = ""
 
 @onready var actionable_finder: Area2D = $Direction/ActionableFinger
-
+@onready var marcado: Marker2D = $Direction
 
 func _ready():
 	randomize()
@@ -72,24 +72,32 @@ func _process(delta: float) -> void:
 			situationAtual = "idleL"
 			$animaco.flip_h = false
 			$animaco.play("run")
+			marcado.position.x = 5
+			marcado.position.y = -5
 			move()
 		elif Input.is_action_pressed("esquerda"):
 			input_dir = Vector2(-1,0)
 			situationAtual = "idleL"
 			$animaco.flip_h = true
 			$animaco.play("run")
+			marcado.position.x = -5
+			marcado.position.y = -5
 			move()
 		elif Input.is_action_pressed("cima"):
 			input_dir = Vector2(0,-1)
 			situationAtual = "idleC"
 			$animaco.flip_h = false
 			$animaco.play("runC")
+			marcado.position.x = 0
+			marcado.position.y = -12
 			move()
 		elif Input.is_action_pressed("baixo"):
 			input_dir = Vector2(0,1)
 			situationAtual = "idle"
 			$animaco.flip_h = false
 			$animaco.play("runB")
+			marcado.position.x = 0
+			marcado.position.y = 0
 			move()
 		else:
 			$animaco.play(situationAtual)

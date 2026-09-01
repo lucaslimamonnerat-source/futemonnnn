@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dlhj70yi3rm8f"]
+
+[ext_resource type="Script" uid="uid://p5hdsovxoop1" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="FontFile" id="FontFile_4cgrj"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_kw35o"]
+font = SubResource("FontFile_4cgrj")
+font_size = 48
+
+[node name="HUD" type="CanvasLayer" unique_id=816163966]
+script = ExtResource("1_ahhtf")
+
+[node name="Control" type="Control" parent="." unique_id=513575056]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoedasLabel" type="Label" parent="Control" unique_id=1417579967]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Moedas: 0"
+label_settings = SubResource("LabelSettings_kw35o")

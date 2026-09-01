@@ -21,7 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="17_miq2r"]
 [ext_resource type="PackedScene" uid="uid://dsaobkia0n4j" path="res://person/bush.tscn" id="18_75f84"]
 [ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="20_wjo3y"]
+[ext_resource type="PackedScene" uid="uid://dl6m5whyo5cli" path="res://scenes/actionable.tscn" id="22_pyc3p"]
 [ext_resource type="PackedScene" uid="uid://brce2wawbh4kc" path="res://scenes/npc.tscn" id="22_xmcgw"]
+[ext_resource type="Resource" uid="uid://c7rvaf1ql0due" path="res://dialogue/dialogue.dialogue" id="23_j1e7b"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hwoes"]
 
@@ -3858,6 +3860,9 @@ sources/11 = SubResource("TileSetAtlasSource_cbd2f")
 sources/12 = SubResource("TileSetAtlasSource_7n63a")
 sources/15 = SubResource("TileSetAtlasSource_75f84")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwoes"]
+size = Vector2(16.915524, 17.819397)
+
 [node name="Inicio" type="Node2D" unique_id=983243086]
 script = ExtResource("1_miq2r")
 
@@ -3944,6 +3949,17 @@ scale = Vector2(0.18, 0.18)
 position = Vector2(-174, -361)
 scale = Vector2(1.2, 1.218)
 cena_destino = "res://scenes/Dentro.tscn"
+
+[node name="StaticBody2D" parent="." unique_id=599140305 instance=ExtResource("2_fdyee")]
+position = Vector2(-380, -405.00003)
+scale = Vector2(1.0223082, 0.95169353)
+
+[node name="Actionable" parent="StaticBody2D" unique_id=886247892 instance=ExtResource("22_pyc3p")]
+dialogue_resource = ExtResource("23_j1e7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Actionable" unique_id=1374962810]
+position = Vector2(364.20724, 414.8398)
+shape = SubResource("RectangleShape2D_hwoes")
 
 [node name="npc" parent="." unique_id=773783968 instance=ExtResource("22_xmcgw")]
 position = Vector2(-151, -104)
