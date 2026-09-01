@@ -1,8 +1,30 @@
 [gd_scene format=3 uid="uid://doatipaid7icl"]
 
 [ext_resource type="PackedScene" uid="uid://c38ca7yuye88s" path="res://scenes/tiles.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://b3m4yp8xrtpjp" path="res://scenes/arvore.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://dl6m5whyo5cli" path="res://scenes/actionable.tscn" id="3_036b0"]
+[ext_resource type="Resource" uid="uid://c7rvaf1ql0due" path="res://dialogue/dialogue.dialogue" id="4_dwbse"]
+[ext_resource type="PackedScene" uid="uid://dhuw5npy0udy7" path="res://person/player.tscn" id="5_036b0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
+size = Vector2(16.915524, 17.819397)
 
 [node name="World" type="Node2D" unique_id=2020764003]
 
 [node name="Tiles" parent="." unique_id=1814617504 instance=ExtResource("1_f3sb7")]
-position = Vector2(-469.35858, 423.86627)
+position = Vector2(-456, 437)
+
+[node name="StaticBody2D" parent="." unique_id=640328120 instance=ExtResource("2_aqk2v")]
+position = Vector2(155, 849)
+scale = Vector2(0.637, 0.593)
+
+[node name="Actionable" parent="StaticBody2D" unique_id=886247892 instance=ExtResource("3_036b0")]
+dialogue_resource = ExtResource("4_dwbse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Actionable" unique_id=1382595381]
+position = Vector2(364.20724, 414.8398)
+shape = SubResource("RectangleShape2D_86ap7")
+
+[node name="player" parent="." unique_id=1550785553 instance=ExtResource("5_036b0")]
+position = Vector2(396, 1114)
+scale = Vector2(1.5211784, 1.5211784)

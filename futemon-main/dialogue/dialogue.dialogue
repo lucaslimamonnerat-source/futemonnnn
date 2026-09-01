@@ -1,0 +1,13 @@
+~ start
+Nathan: [[Hi|Hello|Howdy]], seja bem vindo.
+Nathan: Escolha.	
+- Charmander
+	Nathan: Melhor escolha.
+- Squirtle
+	Nathan: Aceitável.
+- Bulbassauro
+	Nathan: Péssima escolha.
+#- Start again => start
+- Fugir => END
+Nathan: Siga em frente senhor.
+=> END
