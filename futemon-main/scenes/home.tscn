@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://di4m78806k32c"]
+
+[ext_resource type="PackedScene" uid="uid://ckl1gd52trg6f" path="res://scenes/objects/shadow_player.tscn" id="1_krot7"]
+
+[node name="home" type="Node2D" unique_id=1393670583]
+
+[node name="ShadowPlayer" parent="." unique_id=2006692589 instance=ExtResource("1_krot7")]
+position = Vector2(632, 202)
+scale = Vector2(0.18197225, 0.18197225)
+ir = "inicio.tscn"
+
+[node name="ShadowPlayer2" parent="." unique_id=1498380138 instance=ExtResource("1_krot7")]
+position = Vector2(484, 266)
+scale = Vector2(0.18197225, 0.18197225)
+ir = "teste_obj.tscn"
+
+[node name="ShadowPlayer3" parent="." unique_id=267876883 instance=ExtResource("1_krot7")]
+position = Vector2(792, 281)
+scale = Vector2(0.18197225, 0.18197225)
+ir = "teste_obj.tscn"
+
+[node name="ShadowPlayer4" parent="." unique_id=2014151812 instance=ExtResource("1_krot7")]
+position = Vector2(526, 451)
+scale = Vector2(0.18197225, 0.18197225)
+ir = "teste_obj.tscn"
+
+[node name="ShadowPlayer5" parent="." unique_id=1395144112 instance=ExtResource("1_krot7")]
+position = Vector2(769, 455)
+scale = Vector2(0.18197225, 0.18197225)
+ir = "teste_obj.tscn"

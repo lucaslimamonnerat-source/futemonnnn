@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ckl1gd52trg6f"]
+
+[ext_resource type="Script" uid="uid://dnf0uvpl17itp" path="res://scenes/objects/shadow_player.gd" id="1_73vdl"]
+[ext_resource type="Texture2D" uid="uid://d2p4lkspvflt4" path="res://sprites/Cenario/batata.png" id="1_j3rer"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86ap7"]
+
+[node name="ShadowPlayer" type="Area2D" unique_id=2006692589]
+script = ExtResource("1_73vdl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1459425815]
+texture = ExtResource("1_j3rer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1449705695]
+position = Vector2(-5, 3)
+scale = Vector2(19.174078, 19.174078)
+shape = SubResource("CircleShape2D_86ap7")
