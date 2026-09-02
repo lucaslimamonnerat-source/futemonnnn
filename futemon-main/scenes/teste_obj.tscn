@@ -1,11 +1,83 @@
-[gd_scene format=3 uid="uid://dh5kamtbrpoqf"]
+[gd_scene format=3 uid="uid://dwb6vx18vaxg0"]
 
-[node name="TesteObj" type="Node2D" unique_id=1466320078]
+[ext_resource type="FontFile" uid="uid://bd0id0v1iksjl" path="res://sprites/fonts/The Amazing Spider-Man.ttf" id="1_2ldr3"]
+[ext_resource type="Script" uid="uid://b1e3nap5p1vpf" path="res://scripts/teste_obj.gd" id="1_tibs8"]
+[ext_resource type="FontFile" uid="uid://bj8ekx5a0ddov" path="res://sprites/fonts/GrapeSoda.ttf" id="2_tibs8"]
 
-[node name="Label" type="Label" parent="." unique_id=305401922]
-offset_left = 50.0
-offset_top = 264.0
-offset_right = 329.0
-offset_bottom = 287.0
-scale = Vector2(4.133841, 4.230405)
-text = "NÃO TEM AINDA, VOLTA DPS PORRA"
+[sub_resource type="LabelSettings" id="LabelSettings_86ap7"]
+font = ExtResource("1_2ldr3")
+font_size = 72
+
+[sub_resource type="Theme" id="Theme_2imru"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qimwd"]
+bg_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnjs0"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="teste_obj" type="Control" unique_id=597999214]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tibs8")
+
+[node name="Label" type="Label" parent="." unique_id=1435582645]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 111.0
+offset_right = 1120.0
+offset_bottom = 209.0
+text = "NÃO TEM NADA AQUI BOBÃO VAZA"
+label_settings = SubResource("LabelSettings_86ap7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=131013288]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.38300002
+anchor_right = 0.5
+anchor_bottom = 0.38300002
+offset_left = -171.0
+offset_top = 14.23999
+offset_right = 171.0
+offset_bottom = 265.49
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.1599988)
+theme_override_constants/separation = 6
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=2054968290]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_2imru")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_tibs8")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_qimwd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rnjs0")
+text = "VOLTAR"
+
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
