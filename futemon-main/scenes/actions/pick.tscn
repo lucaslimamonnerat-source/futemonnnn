@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://xexnllv60go2"]
+
+[ext_resource type="Script" uid="uid://lpnj2y5r7syg" path="res://scripts/pick.gd" id="1_krubq"]
+
+[node name="pick" type="Area2D" unique_id=1123286511]
+collision_layer = 16
+script = ExtResource("1_krubq")

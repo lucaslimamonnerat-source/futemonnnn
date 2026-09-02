@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b4t32p7b3t2pw"]
+
+[ext_resource type="Texture2D" uid="uid://ngod2rwlo43i" path="res://sprites/Inventory/Axe.png" id="1_qx0wg"]
+
+[node name="item_test" type="StaticBody2D" unique_id=1899218949]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1602552929]
+texture = ExtResource("1_qx0wg")

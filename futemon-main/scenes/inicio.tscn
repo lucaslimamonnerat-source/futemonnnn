@@ -21,9 +21,12 @@
 [ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="17_miq2r"]
 [ext_resource type="PackedScene" uid="uid://dsaobkia0n4j" path="res://person/bush.tscn" id="18_75f84"]
 [ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="20_wjo3y"]
-[ext_resource type="PackedScene" uid="uid://dl6m5whyo5cli" path="res://scenes/actionable.tscn" id="22_pyc3p"]
+[ext_resource type="PackedScene" uid="uid://dl6m5whyo5cli" path="res://scenes/actions/actionable.tscn" id="22_pyc3p"]
 [ext_resource type="PackedScene" uid="uid://brce2wawbh4kc" path="res://scenes/npc.tscn" id="22_xmcgw"]
 [ext_resource type="Resource" uid="uid://c7rvaf1ql0due" path="res://dialogue/dialogue.dialogue" id="23_j1e7b"]
+[ext_resource type="PackedScene" uid="uid://b4t32p7b3t2pw" path="res://scenes/objects/item_test.tscn" id="25_hwoes"]
+[ext_resource type="PackedScene" uid="uid://xexnllv60go2" path="res://scenes/actions/pick.tscn" id="26_k2hld"]
+[ext_resource type="Resource" uid="uid://b6bfd77bfpivd" path="res://dialogue/item_pick.dialogue" id="27_k2hld"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hwoes"]
 
@@ -3863,6 +3866,9 @@ sources/15 = SubResource("TileSetAtlasSource_75f84")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwoes"]
 size = Vector2(16.915524, 17.819397)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
+size = Vector2(19, 19)
+
 [node name="Inicio" type="Node2D" unique_id=983243086]
 script = ExtResource("1_miq2r")
 
@@ -3963,3 +3969,14 @@ shape = SubResource("RectangleShape2D_hwoes")
 
 [node name="npc" parent="." unique_id=773783968 instance=ExtResource("22_xmcgw")]
 position = Vector2(-151, -104)
+
+[node name="item_test" parent="." unique_id=1899218949 instance=ExtResource("25_hwoes")]
+position = Vector2(-50, 6)
+
+[node name="pick" parent="item_test" unique_id=1123286511 instance=ExtResource("26_k2hld")]
+dialogue_resource = ExtResource("27_k2hld")
+item_name = "Machado"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_test/pick" unique_id=2048818721]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_86ap7")

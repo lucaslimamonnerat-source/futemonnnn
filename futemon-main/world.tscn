@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c38ca7yuye88s" path="res://scenes/tiles.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://b3m4yp8xrtpjp" path="res://scenes/arvore.tscn" id="2_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://dl6m5whyo5cli" path="res://scenes/actionable.tscn" id="3_036b0"]
+[ext_resource type="PackedScene" uid="uid://dl6m5whyo5cli" path="res://scenes/actions/actionable.tscn" id="3_036b0"]
 [ext_resource type="Resource" uid="uid://c7rvaf1ql0due" path="res://dialogue/dialogue.dialogue" id="4_dwbse"]
 [ext_resource type="PackedScene" uid="uid://dhuw5npy0udy7" path="res://person/player.tscn" id="5_036b0"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
 size = Vector2(16.915524, 17.819397)
