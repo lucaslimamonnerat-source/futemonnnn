@@ -9,6 +9,7 @@ var matos = []
 var porta_proxima = null
 var interagindo = false
 var cena_destino = ""
+var inventory = Inv.items
 
 @onready var actionable_finder: Area2D = $Direction/ActionableFinger
 @onready var marcado: Marker2D = $Direction
@@ -21,6 +22,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()
+			if actionables[0].life == 0:
+				Inv.picked(actionables[0].item_name)
+				inventory = Inv.items
 			return
 
 func entrou_no_mato(mato):
@@ -103,6 +107,10 @@ func _process(delta: float) -> void:
 			$animaco.play(situationAtual)
 	else:
 		$animaco.play("idle")
+	
+	if Input.is_action_pressed("batata"):
+		print(inventory)
+		print(Inv.items)
 
 func move():
 	if input_dir != Vector2.ZERO:
