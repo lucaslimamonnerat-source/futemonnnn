@@ -28,7 +28,9 @@ func _ready():
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
+		if actionables.is_empty():
+			return
+		if actionables[0].has_method("action"):
 			actionables[0].action()
 			if actionables[0].life == 0:
 				Inv.picked(actionables[0].item_name)

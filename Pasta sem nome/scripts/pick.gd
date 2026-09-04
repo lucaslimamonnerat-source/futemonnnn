@@ -6,7 +6,6 @@ var life = 0
 @export var item_name: String = ""
 
 func action() -> void:
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start, [self])
 	
 	State.axe_state = 1
 	

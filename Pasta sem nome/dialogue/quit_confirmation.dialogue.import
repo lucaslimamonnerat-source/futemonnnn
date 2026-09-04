@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c14te48eg37qi"
+path="res://.godot/imported/quit_confirmation.dialogue-34c17ed9c37a23c802c87f1e9f792a8b.tres"
+
+[deps]
+
+source_file="res://dialogue/quit_confirmation.dialogue"
+dest_files=["res://.godot/imported/quit_confirmation.dialogue-34c17ed9c37a23c802c87f1e9f792a8b.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,6 @@
+~ start
+Você deseja sair?
+- Sim.
+	set get_tree().quit()
+- Não.
+    # Não faz nada, apenas encerra o diálogo
