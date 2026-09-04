@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+@onready var playerWalkingAudioStream = $playerandando
+@onready var playerBatendoAudioStream = $playerbatendo
 var VELOCIDADE = 200
 var situationAtual = "idle"
 var title_size = 16
@@ -10,12 +13,17 @@ var porta_proxima = null
 var interagindo = false
 var cena_destino = ""
 var inventory = Inv.items
-
 @onready var actionable_finder: Area2D = $Direction/ActionableFinger
 @onready var marcado: Marker2D = $Direction
 
 func _ready():
 	randomize()
+	print(">>> Jogador _ready. Game.vindo_da_casa=", Game.vindo_da_casa, " Game.ponto_retorno=", Game.ponto_retorno)
+
+	# Apenas para carregamento de save
+	if Game.is_loading_save:
+		global_position = Game.saved_player_position
+		Game.is_loading_save = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
@@ -36,7 +44,6 @@ func saiu_do_mato(mato):
 func tentar_encontro():
 	if matos.is_empty():
 		return
-
 	for mato in matos:
 		var roll = randi() % 100
 		if roll < mato.chance_encontro:
@@ -44,32 +51,30 @@ func tentar_encontro():
 			podeAndar = 0
 			SceneTransition.change_scene("res://scenes/battle.tscn")
 			return
-			
+
 func interagir_com_porta():
 	interagindo = true
 	podeAndar = 0
-	
+	print("Interagindo com porta: ", porta_proxima)
+
 	if porta_proxima:
 		porta_proxima.abrir_porta()
-		
-	# Aguarda um pouquinho pra mostrar a porta aberta
-	await get_tree().create_timer(0.3).timeout
-	Game.vindo_da_casa = true
-	# Fade out e troca de cena
-	SceneTransition.change_scene(cena_destino)
+		porta_proxima.preparar_transicao()
 
+	await get_tree().create_timer(0.3).timeout
+	print("Trocando para cena: ", cena_destino)
+	SceneTransition.change_scene(cena_destino)
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("sair"):
 		get_tree().change_scene_to_file("res://scenes/menu_start.tscn")
-	
+
 	if Input.is_action_just_pressed("ataque") and porta_proxima != null and not interagindo:
 		interagir_com_porta()
-	
+
 	if podeAndar == 1:
 		if moving:
 			return
-
 		input_dir = Vector2.ZERO
 		if Input.is_action_pressed("direita"):
 			input_dir = Vector2(1,0)
@@ -104,10 +109,16 @@ func _process(delta: float) -> void:
 			marcado.position.y = 0
 			move()
 		else:
+			# Nenhuma tecla de direção → para o som de passos
+			if playerWalkingAudioStream.playing:
+				playerWalkingAudioStream.stop()
 			$animaco.play(situationAtual)
 	else:
+		# Se não pode andar, também para o som
+		if playerWalkingAudioStream.playing:
+			playerWalkingAudioStream.stop()
 		$animaco.play("idle")
-	
+
 	if Input.is_action_pressed("batata"):
 		print(inventory)
 		print(Inv.items)
@@ -118,8 +129,10 @@ func move():
 		if colisao:
 			moving = false
 			return
-
 		moving = true
+		# Toca o som de passos se ainda não estiver tocando
+		if !playerWalkingAudioStream.playing:
+			playerWalkingAudioStream.play()
 		var destino = position + input_dir * title_size
 		var tween = create_tween()
 		tween.tween_property(self, "position", destino, 0.2)

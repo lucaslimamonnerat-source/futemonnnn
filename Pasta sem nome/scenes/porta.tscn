@@ -8,6 +8,7 @@ size = Vector2(17, 32)
 
 [node name="Porta" type="Area2D" unique_id=837879500]
 script = ExtResource("1_hlcnn")
+cena_destino = "res://scenes/Dentro.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1045834510]
 position = Vector2(8.5, 47)
