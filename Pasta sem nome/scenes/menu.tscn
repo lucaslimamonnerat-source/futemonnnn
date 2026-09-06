@@ -1997,7 +1997,7 @@ custom_minimum_size = Vector2(700, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = SubResource("FontVariation_mhnvy")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 95
 text = "Musica"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="AudioMenu/Control/NinePatchRect/VBoxContainer" unique_id=1878771604]
@@ -2005,7 +2005,7 @@ custom_minimum_size = Vector2(1600, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = SubResource("FontVariation_mhnvy")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 95
 text = "Efeitos Sonoros"
 script = ExtResource("6_g3eks")
 
@@ -2014,7 +2014,7 @@ custom_minimum_size = Vector2(700, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = SubResource("FontVariation_mhnvy")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 95
 text = "Radio Bob Esponja"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="AudioMenu/Control/NinePatchRect/VBoxContainer" unique_id=2045031247]
@@ -2022,24 +2022,32 @@ custom_minimum_size = Vector2(700, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = SubResource("FontVariation_mhnvy")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 95
 text = "Radio Naruto "
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="AudioMenu/Control/NinePatchRect/VBoxContainer" unique_id=2114985164]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = SubResource("FontVariation_mhnvy")
+theme_override_font_sizes/normal_font_size = 95
+text = "Radio *nomedojogo*"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="AudioMenu/Control/NinePatchRect/VBoxContainer" unique_id=817602892]
 custom_minimum_size = Vector2(700, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = SubResource("FontVariation_mhnvy")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 95
 text = "Voltar"
 
 [node name="TextureRect" type="TextureRect" parent="AudioMenu/Control/NinePatchRect" unique_id=46097723]
 texture_filter = 1
 layout_mode = 0
-offset_left = 239.84041
-offset_top = 65.57543
-offset_right = 751.8404
-offset_bottom = 577.57544
+offset_left = 250.02669
+offset_top = 19.587467
+offset_right = 762.0267
+offset_bottom = 531.58746
 rotation = 1.5713573
 scale = Vector2(0.09659096, 0.09659096)
 texture = ExtResource("4_4ytvr")

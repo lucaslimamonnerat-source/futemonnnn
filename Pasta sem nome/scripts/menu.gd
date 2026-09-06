@@ -41,6 +41,7 @@ func _unhandled_input(event):
 				if player and !player.moving:
 					player.set_process(false)
 					menu.visible = true
+					State.menu_aberto = true
 					screen_loaded = ScreenLoaded.JUST_MENU
 					selected_option = 0
 					select_arrow.position.y = 5
@@ -135,6 +136,7 @@ func _close_menu():
 		player.set_process(true)
 	menu.visible = false
 	audio_menu.visible = false
+	State.menu_aberto = false
 	select_arrow.visible = true
 	screen_loaded = ScreenLoaded.NOTHING
 	selected_option = 0

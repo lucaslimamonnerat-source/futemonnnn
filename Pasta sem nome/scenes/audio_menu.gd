@@ -6,17 +6,17 @@ signal closed
 @onready var label_music: RichTextLabel = $Control/NinePatchRect/VBoxContainer/RichTextLabel
 @onready var label_sfx: RichTextLabel = $Control/NinePatchRect/VBoxContainer/RichTextLabel2
 
-const OPTION_COUNT := 5
+const OPTION_COUNT := 6
 const ARROW_STEP := 104
-const ARROW_START_Y := 65
+const ARROW_START_Y := 16
+const ARROW_START_X := 0
 
-# ajuste esses nomes pra bater com os buses que você tem na aba "Áudio"
 const MUSIC_BUS := "Music"
 const SFX_BUS := "SFX"
 
-# ajuste os caminhos dos arquivos de rádio
 const RADIO_BOB_ESPONJA := "res://musics/spongebob-squarepants-music.mp3"
 const RADIO_NARUTO := "res://musics/naruto-sadness-and-sorrow-classical.mp3"
+const RADIO_FUTEMON := "res://musics/aimmeucuzinhopreto.mp3"
 
 var is_open := false
 var selected_option := 0
@@ -27,14 +27,17 @@ func _ready() -> void:
 func open() -> void:
 	is_open = true
 	visible = true
+	State.audiomenu_aberto = true
 	selected_option = 0
 	select_arrow.position.y = ARROW_START_Y
+
 	_refresh_toggle_labels()
 
 func close() -> void:
 	is_open = false
 	visible = false
-
+	State.audiomenu_aberto = false
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if not is_open:
 		return
@@ -60,7 +63,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			1: _toggle_sfx()
 			2: _play_radio(RADIO_BOB_ESPONJA)
 			3: _play_radio(RADIO_NARUTO)
-			4:
+			4: _play_radio(RADIO_FUTEMON)
+			5:
 				close()
 				closed.emit()
 
@@ -99,7 +103,7 @@ func _play_radio(path: String) -> void:
 		push_warning("Nenhum node no grupo 'music_player' encontrado.")
 		return
 	if music_player.stream and music_player.stream.resource_path == path:
-		return # já tocando essa música, não faz nada
+		return
 	music_player.stop()
 	music_player.stream = load(path)
 	music_player.play()
