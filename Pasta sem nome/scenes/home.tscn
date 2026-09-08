@@ -12,7 +12,7 @@ ir = "inicio.tscn"
 [node name="ShadowPlayer2" parent="." unique_id=1498380138 instance=ExtResource("1_krot7")]
 position = Vector2(484, 266)
 scale = Vector2(0.18197225, 0.18197225)
-ir = "teste_obj.tscn"
+ir = "inicio_2.tscn"
 
 [node name="ShadowPlayer3" parent="." unique_id=267876883 instance=ExtResource("1_krot7")]
 position = Vector2(792, 281)
