@@ -11,6 +11,7 @@ var input_dir
 var matos = []
 var porta_proxima = null
 var interagindo = false
+var batata = preload("res://sprites/Inventory/Axe.png")
 var cena_destino = ""
 var inventory = Inv.items
 @onready var actionable_finder: Area2D = $Direction/ActionableFinger
@@ -35,6 +36,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			if actionables[0].life == 0:
 				Inv.picked(actionables[0].item_name)
 				inventory = Inv.items
+				Inventory._novo_item(batata)
 			return
 
 func entrou_no_mato(mato):

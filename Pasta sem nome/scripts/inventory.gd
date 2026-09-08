@@ -1,21 +1,23 @@
 extends CanvasLayer
 
-@onready var inventory = $Control
-var imagem = preload("res://sprites/Inventory/Axe.png")
+@onready var inventory = $Control/NinePatchRect
+var itemX = 10
+var itemY = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	inventory.visible = false
+	pass # inventory.visible = false
 
-func _process(delta: float) -> void:
-	if State.axe_state == 1:
-		$Control/NinePatchRect/Axe.visible = true
+#func _process(delta: float) -> void:
+	#if State.axe_state == 1:
+		#$Control/NinePatchRect/Axe.visible = true
 
-func _novo_item():
+func _novo_item(item: Texture2D):
 	var novo_sprite = Sprite2D.new()
 	
-	novo_sprite.texture = imagem
+	novo_sprite.texture = item
+	novo_sprite.position = Vector2(itemX, itemY)
 	
-	novo_sprite.position = Vector2(100, 100)
+	itemX += 100
 	
-	$CanvasLayer/Control/NinePatchRect.add_child(novo_sprite)
+	inventory.add_child(novo_sprite)

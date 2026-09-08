@@ -9,6 +9,7 @@
 script = ExtResource("1_elp5n")
 
 [node name="Control" type="Control" parent="." unique_id=1882953546]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

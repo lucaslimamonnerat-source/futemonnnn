@@ -4153,6 +4153,17 @@ item_name = "Machado"
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_86ap7")
 
+[node name="item_test2" parent="." unique_id=2057536931 instance=ExtResource("25_hwoes")]
+position = Vector2(-120, 37)
+
+[node name="pick" parent="item_test2" unique_id=1710716801 instance=ExtResource("26_k2hld")]
+dialogue_resource = ExtResource("27_k2hld")
+item_name = "Machado"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_test2/pick" unique_id=577738322]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_86ap7")
+
 [node name="AudioStreamPlayer2D - BGmusic" type="AudioStreamPlayer2D" parent="." unique_id=1633562143 groups=["music_player"]]
 stream = ExtResource("28_yae6b")
 volume_db = -12.671
