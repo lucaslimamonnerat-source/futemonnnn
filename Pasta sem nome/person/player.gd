@@ -11,7 +11,7 @@ var input_dir
 var matos = []
 var porta_proxima = null
 var interagindo = false
-var batata = preload("res://sprites/Inventory/Axe.png")
+var batata = load("res://sprites/Inventory/Axe.png")
 var cena_destino = ""
 var inventory = Inv.items
 @onready var actionable_finder: Area2D = $Direction/ActionableFinger

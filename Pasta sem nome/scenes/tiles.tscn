@@ -271,7 +271,6 @@ tile_set = SubResource("TileSet_74fkb")
 
 [node name="Casa" parent="." unique_id=1167718415 instance=ExtResource("8_1tng7")]
 position = Vector2(584, 395)
-cena_destino = "res://scenes/Dentro.tscn"
 
 [node name="player" parent="." unique_id=1550785553 instance=ExtResource("9_o3lnv")]
 z_index = 1000
