@@ -1,7 +1,13 @@
 extends CharacterBody2D
 
+@onready var ground_detector: RayCast2D = $GroundDetector
 @onready var playerWalkingAudioStream = $playerandando
 @onready var playerBatendoAudioStream = $playerbatendo
+
+# Áudios dos terrenos (substitua pelos caminhos reais)
+var grass_audio = preload("res://efeitosonoros/player_walking.mp3")
+var concrete_audio = preload("res://efeitosonoros/12_Step_wood_03.wav")
+
 var VELOCIDADE = 200
 var situationAtual = "idle"
 var title_size = 16
@@ -76,6 +82,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ataque") and porta_proxima != null and not interagindo:
 		interagir_com_porta()
 
+	# 🔄 Atualiza o som do terreno continuamente (mesmo quando está andando)
+	check_ground_type()
+	
+
 	if podeAndar == 1:
 		if moving:
 			return
@@ -145,3 +155,30 @@ func move():
 
 func move_false():
 	moving = false
+
+func check_ground_type():
+	if not ground_detector.is_colliding():
+		return
+	var collider = ground_detector.get_collider()
+	if collider is TileMap:
+		var collision_point = ground_detector.get_collision_point()
+		var cell = collider.local_to_map(collision_point)
+		var tile_data = collider.get_cell_tile_data(0, cell)
+		if tile_data:
+			var terrain = tile_data.get_custom_data("terrain_type")
+			print("Terreno detectado: ", terrain)  # <-- PRINT DE DEBUG
+			match terrain:
+				"grass":
+					update_walking_audio(grass_audio)
+				"concrete":
+					update_walking_audio(concrete_audio)
+				_:
+					pass
+
+func update_walking_audio(new_audio):
+	if playerWalkingAudioStream.stream != new_audio:
+		var was_playing = playerWalkingAudioStream.playing
+		playerWalkingAudioStream.stream = new_audio
+		if was_playing:
+			playerWalkingAudioStream.stop()
+			playerWalkingAudioStream.play()

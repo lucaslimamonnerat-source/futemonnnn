@@ -37,3 +37,6 @@ bus = &"SFX"
 
 [node name="playerbatendo" type="AudioStreamPlayer2D" parent="." unique_id=2077012990]
 bus = &"SFX"
+
+[node name="GroundDetector" type="RayCast2D" parent="." unique_id=590135791]
+target_position = Vector2(0, 16)

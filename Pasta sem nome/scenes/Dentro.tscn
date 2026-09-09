@@ -4,6 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cdl3otyfqs0u6" path="res://sprites/Cenario/chaoCasa.png" id="1_ydpud"]
 [ext_resource type="PackedScene" uid="uid://dhuw5npy0udy7" path="res://person/player.tscn" id="2_lsapi"]
 [ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="3_1kcq6"]
+[ext_resource type="Texture2D" uid="uid://dw37t765fxc7v" path="res://sprites/Milena2.0/MilenaIdleAnimation.png" id="4_fnveu"]
+[ext_resource type="Texture2D" uid="uid://r6ywcq23656a" path="res://sprites/Milena2.0/MilenaIdleBack.png" id="5_own11"]
+[ext_resource type="Texture2D" uid="uid://byuon4yw3gqd8" path="res://sprites/Milena2.0/MilenaIdleRight.png" id="6_bjnk6"]
+[ext_resource type="Texture2D" uid="uid://q7hhnxok5ugc" path="res://sprites/Milena2.0/MilenaRightWalk.png" id="7_wrano"]
+[ext_resource type="Texture2D" uid="uid://lfqeacsgcmrn" path="res://sprites/Milena2.0/MilenaFrontWalk.png" id="8_rgp8w"]
+[ext_resource type="Texture2D" uid="uid://bepprq88ri2g0" path="res://sprites/Milena2.0/MilenaBackWalk.png" id="9_kpr62"]
+[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="10_bjnk6"]
+[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="11_wrano"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kcq6"]
 texture = ExtResource("1_ydpud")
@@ -22,6 +30,165 @@ texture = ExtResource("1_ydpud")
 [sub_resource type="TileSet" id="TileSet_ebum8"]
 sources/0 = SubResource("TileSetAtlasSource_1kcq6")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ybkb"]
+atlas = ExtResource("4_fnveu")
+region = Rect2(0, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bva8"]
+atlas = ExtResource("4_fnveu")
+region = Rect2(96, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rlig"]
+atlas = ExtResource("5_own11")
+region = Rect2(0, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgk7f"]
+atlas = ExtResource("5_own11")
+region = Rect2(96, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8pv3"]
+atlas = ExtResource("6_bjnk6")
+region = Rect2(0, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfx2t"]
+atlas = ExtResource("6_bjnk6")
+region = Rect2(96, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y3d5"]
+atlas = ExtResource("7_wrano")
+region = Rect2(96, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7tod"]
+atlas = ExtResource("7_wrano")
+region = Rect2(192, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkhwb"]
+atlas = ExtResource("7_wrano")
+region = Rect2(288, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4m3t"]
+atlas = ExtResource("7_wrano")
+region = Rect2(0, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x30tw"]
+atlas = ExtResource("8_rgp8w")
+region = Rect2(96, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13a6j"]
+atlas = ExtResource("8_rgp8w")
+region = Rect2(192, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wvps"]
+atlas = ExtResource("8_rgp8w")
+region = Rect2(288, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbgk5"]
+atlas = ExtResource("8_rgp8w")
+region = Rect2(0, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qtm1"]
+atlas = ExtResource("9_kpr62")
+region = Rect2(96, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ojsf"]
+atlas = ExtResource("9_kpr62")
+region = Rect2(0, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ow7h"]
+atlas = ExtResource("9_kpr62")
+region = Rect2(288, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxh1x"]
+atlas = ExtResource("9_kpr62")
+region = Rect2(192, 0, 96, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgry5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ybkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bva8")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rlig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgk7f")
+}],
+"loop": 1,
+"name": &"idleC",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8pv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfx2t")
+}],
+"loop": 1,
+"name": &"idleL",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y3d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7tod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkhwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4m3t")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x30tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13a6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wvps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbgk5")
+}],
+"loop": 1,
+"name": &"runB",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qtm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ojsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ow7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxh1x")
+}],
+"loop": 1,
+"name": &"runC",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
 size = Vector2(468, 214)
 
@@ -36,6 +203,17 @@ tile_set = SubResource("TileSet_ebum8")
 z_index = 1000
 position = Vector2(504.00003, 269)
 scale = Vector2(1.5, 1.5)
+
+[node name="animaco" type="AnimatedSprite2D" parent="player" unique_id=235823623]
+texture_filter = 1
+position = Vector2(0, -2)
+scale = Vector2(0.11458333, 0.11458333)
+sprite_frames = SubResource("SpriteFrames_bgry5")
+animation = &"runB"
+
+[node name="Menu" parent="player" unique_id=342042241 instance=ExtResource("10_bjnk6")]
+
+[node name="CanvasLayer" parent="player" unique_id=1132434581 instance=ExtResource("11_wrano")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=789362937]
 position = Vector2(503, 182)
