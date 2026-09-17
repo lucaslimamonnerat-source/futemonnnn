@@ -5,7 +5,8 @@ var itemX = 10
 var itemY = 10
 
 
-
+func _atualizar(item):
+	return
 
 #func _process(delta: float) -> void:
 	#if State.axe_state == 1:

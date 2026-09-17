@@ -38,5 +38,5 @@ texture = ExtResource("3_njucy")
 [node name="Axe" type="Sprite2D" parent="Control/NinePatchRect" unique_id=112137011]
 visible = false
 position = Vector2(37.08362, 37.248207)
-scale = Vector2(2.4184968, 3.2250128)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("4_f0lgf")

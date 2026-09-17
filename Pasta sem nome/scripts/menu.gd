@@ -11,6 +11,8 @@ var screen_loaded = ScreenLoaded.NOTHING
 var selected_option: int = 0
 var inv_selected: int = 0
 var itens: Array = []
+var positions = []
+var novaPos = 37
 
 func _ready() -> void:
 	menu.visible = false
@@ -19,7 +21,7 @@ func _ready() -> void:
 	select_arrow.position.y = 5
 	audio_menu.closed.connect(_on_audio_menu_closed)
 
-	var item_vel = ItemVelocidade.new()
+	var item_vel = Inv._use("ababa")
 	var item_cor = ItemCor.new()
 	itens = [item_vel, item_cor, null, null,
 			 null, null, null, null,
@@ -56,12 +58,35 @@ func _unhandled_input(event):
 					1:
 						var inventory = get_tree().get_first_node_in_group("Inventory")
 						if inventory:
+							var novo_sprite = Sprite2D.new()
+							var minha_textura = load("res://sprites/Inventory/Axe.png")
+							novo_sprite.position = Vector2(novaPos, 37)
+							if novo_sprite.position in positions:
+								novaPos += 42
+								novo_sprite.position = Vector2(novaPos, 37) 
+								positions.append(novo_sprite.position)
+							else:
+								positions.append(novo_sprite.position)
+							
+							novo_sprite.scale.x = 2.418
+							novo_sprite.scale.y = 3.225
+							if minha_textura:
+								novo_sprite.texture = minha_textura
+							else:
+								print("Erro ao carregar a textura!")
+							
 							inventory.get_node("Control").visible = true
 							inv_selected = 0
 							var arrow_inv = inventory.get_node("Control/NinePatchRect/TextureRect")
 							arrow_inv.position = Vector2(9, 7)
 							select_arrow.visible = false
 							screen_loaded = ScreenLoaded.PARTY_SCREEN
+							
+							if Inv.items:
+								inventory.get_node("Control/NinePatchRect").add_child(novo_sprite)
+								print(Inv.items)
+								for child in inventory.get_node("Control/NinePatchRect").get_children():
+									print(child)
 					2: pass
 					3:
 						SistemadeSave.save_game()
