@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://di4m78806k32c"]
 
 [ext_resource type="PackedScene" uid="uid://ckl1gd52trg6f" path="res://scenes/objects/shadow_player.tscn" id="1_krot7"]
+[ext_resource type="Texture2D" uid="uid://dw37t765fxc7v" path="res://sprites/Milena2.0/MilenaIdleAnimation.png" id="2_w18ys"]
+[ext_resource type="Texture2D" uid="uid://7xjviyvfvr0d" path="res://sprites/Iris/1IrisIdle.png" id="3_reixx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
+size = Vector2(252.78577, 362.69287)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8imwq"]
+size = Vector2(236.29993, 236.29974)
 
 [node name="home" type="Node2D" unique_id=1393670583]
 
@@ -9,10 +17,32 @@ position = Vector2(632, 202)
 scale = Vector2(0.18197225, 0.18197225)
 ir = "inicio.tscn"
 
+[node name="MilenaIdleAnimation" type="Sprite2D" parent="ShadowPlayer" unique_id=1996556983]
+position = Vector2(0, -65.94409)
+scale = Vector2(3.0338874, 3.0338874)
+texture = ExtResource("2_w18ys")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowPlayer" unique_id=710392239]
+position = Vector2(0, 5.4953613)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_86ap7")
+
 [node name="ShadowPlayer2" parent="." unique_id=1498380138 instance=ExtResource("1_krot7")]
 position = Vector2(484, 266)
 scale = Vector2(0.18197225, 0.18197225)
 ir = "inicio_2.tscn"
+
+[node name="1IrisIdle" type="Sprite2D" parent="ShadowPlayer2" unique_id=1118261105]
+position = Vector2(4.121582, -1.373764)
+scale = Vector2(17.001215, 17.001215)
+texture = ExtResource("3_reixx")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowPlayer2" unique_id=1216287573]
+position = Vector2(6.8686523, 1.3737946)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_8imwq")
 
 [node name="ShadowPlayer3" parent="." unique_id=267876883 instance=ExtResource("1_krot7")]
 position = Vector2(792, 281)

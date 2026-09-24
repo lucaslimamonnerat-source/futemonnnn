@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cbgd5hxi6420y" path="res://scripts/menu.gd" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://c4qhadqcxvyek" path="res://sprites/Inventory/InventoryRect.png" id="1_yqeox"]
 [ext_resource type="FontFile" uid="uid://db377vhd2sd2x" path="res://sprites/fonts/pokemon_pixel_font.ttf" id="2_vjb58"]
-[ext_resource type="Texture2D" uid="uid://bdsh0fn44lc4d" path="res://sprites/Inventory/bill.png" id="4_4ytvr"]
 [ext_resource type="Script" uid="uid://blmax8wwbug3x" path="res://scenes/audio_menu.gd" id="5_4ytvr"]
 [ext_resource type="Script" uid="uid://bxqst0n55a13k" path="res://scenes/rich_text_label_2.gd" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://s8gnyldysuk4" path="res://sprites/Inventory/seta.png" id="7_v86rl"]
 
 [sub_resource type="FontVariation" id="FontVariation_con2f"]
 base_font = ExtResource("2_vjb58")
@@ -1848,7 +1848,6 @@ offset_left = 68.0
 offset_top = 14.0
 offset_right = 268.0
 offset_bottom = 84.0
-metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer" unique_id=1200618009]
 custom_minimum_size = Vector2(200, 70)
@@ -1909,13 +1908,13 @@ text = "Saida"
 [node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect" unique_id=1482310776]
 texture_filter = 1
 layout_mode = 0
-offset_left = 63.0
-offset_top = 38.0
-offset_right = 575.0
-offset_bottom = 550.0
-rotation = 1.5713573
+offset_left = 9.2602
+offset_top = 16.18095
+offset_right = 521.2602
+offset_bottom = 528.18097
+rotation = 0.0024594069
 scale = Vector2(0.09659096, 0.09659096)
-texture = ExtResource("4_4ytvr")
+texture = ExtResource("7_v86rl")
 
 [node name="AvisoSave" type="CanvasLayer" parent="." unique_id=1591000698]
 visible = false
@@ -1967,8 +1966,10 @@ script = ExtResource("5_4ytvr")
 [node name="Control" type="Control" parent="AudioMenu" unique_id=1220118674]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 47.0
+offset_bottom = 43.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="AudioMenu/Control" unique_id=1774265509]
 texture_filter = 1
@@ -2044,10 +2045,10 @@ text = "Voltar"
 [node name="TextureRect" type="TextureRect" parent="AudioMenu/Control/NinePatchRect" unique_id=46097723]
 texture_filter = 1
 layout_mode = 0
-offset_left = 250.02669
-offset_top = 19.587467
-offset_right = 762.0267
-offset_bottom = 531.58746
-rotation = 1.5713573
+offset_left = 190.76111
+offset_top = 21.290728
+offset_right = 702.7611
+offset_bottom = 533.2907
+rotation = -0.0010869503
 scale = Vector2(0.09659096, 0.09659096)
-texture = ExtResource("4_4ytvr")
+texture = ExtResource("7_v86rl")

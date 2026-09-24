@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhuw5npy0udy7" path="res://person/player.tscn" id="1_5y4un"]
 [ext_resource type="Texture2D" uid="uid://7xjviyvfvr0d" path="res://sprites/Iris/1IrisIdle.png" id="2_dcih5"]
-[ext_resource type="Texture2D" uid="uid://d2yudl2wvd7qa" path="res://sprites/Iris/IrisPallet.png" id="3_yrkd2"]
+[ext_resource type="Texture2D" uid="uid://c4wpe7ak5d5rf" path="res://sprites/Iris/3IrisBackWalk.png" id="3_5y4un"]
 [ext_resource type="Texture2D" uid="uid://cnnfpershgsg3" path="res://sprites/Iris/2IrisSideIdle_rotated.png" id="4_dhgnu"]
 [ext_resource type="Texture2D" uid="uid://u3ekgtrj2s84" path="res://sprites/Iris/2IrisSideWalk_rotated.png" id="5_gavhj"]
 [ext_resource type="Texture2D" uid="uid://degfgsmmjb8nl" path="res://sprites/Iris/1IrisWalk.png" id="6_v3y1w"]
@@ -15,17 +15,9 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("2_dcih5")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4nrj3"]
-atlas = ExtResource("3_yrkd2")
-region = Rect2(4, 0, 4, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g0gkb"]
-atlas = ExtResource("3_yrkd2")
-region = Rect2(8, 0, 4, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjmun"]
-atlas = ExtResource("3_yrkd2")
-region = Rect2(12, 0, 4, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcih5"]
+atlas = ExtResource("3_5y4un")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfcxe"]
 atlas = ExtResource("4_dhgnu")
@@ -67,17 +59,21 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("6_v3y1w")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mgas1"]
-atlas = ExtResource("3_yrkd2")
-region = Rect2(4, 0, 4, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrkd2"]
+atlas = ExtResource("3_5y4un")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u6f2t"]
-atlas = ExtResource("3_yrkd2")
-region = Rect2(8, 0, 4, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhgnu"]
+atlas = ExtResource("3_5y4un")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxris"]
-atlas = ExtResource("3_yrkd2")
-region = Rect2(12, 0, 4, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gavhj"]
+atlas = ExtResource("3_5y4un")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3y1w"]
+atlas = ExtResource("3_5y4un")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5k00p"]
 animations = [{
@@ -94,13 +90,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4nrj3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g0gkb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cjmun")
+"texture": SubResource("AtlasTexture_dcih5")
 }],
 "loop": 1,
 "name": &"idleC",
@@ -153,13 +143,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mgas1")
+"texture": SubResource("AtlasTexture_yrkd2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u6f2t")
+"texture": SubResource("AtlasTexture_dhgnu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bxris")
+"texture": SubResource("AtlasTexture_gavhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3y1w")
 }],
 "loop": 1,
 "name": &"runC",
@@ -172,7 +165,7 @@ animations = [{
 
 [node name="animaco" type="AnimatedSprite2D" parent="player" unique_id=1664256051]
 texture_filter = 1
-position = Vector2(0, 2.0000002)
+position = Vector2(1, 2.0000002)
 scale = Vector2(0.695, 0.695)
 sprite_frames = SubResource("SpriteFrames_5k00p")
 animation = &"idleC"
