@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ckl1gd52trg6f" path="res://scenes/objects/shadow_player.tscn" id="1_krot7"]
 [ext_resource type="Texture2D" uid="uid://dw37t765fxc7v" path="res://sprites/Milena2.0/MilenaIdleAnimation.png" id="2_w18ys"]
 [ext_resource type="Texture2D" uid="uid://7xjviyvfvr0d" path="res://sprites/Iris/1IrisIdle.png" id="3_reixx"]
+[ext_resource type="PackedScene" uid="uid://dske1gb86d374" path="res://scenes/objects/fodareu.tscn" id="4_reixx"]
+[ext_resource type="Texture2D" uid="uid://bdsh0fn44lc4d" path="res://sprites/Inventory/bill.png" id="4_uhids"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
 size = Vector2(252.78577, 362.69287)
@@ -13,7 +15,7 @@ size = Vector2(236.29993, 236.29974)
 [node name="home" type="Node2D" unique_id=1393670583]
 
 [node name="ShadowPlayer" parent="." unique_id=2006692589 instance=ExtResource("1_krot7")]
-position = Vector2(632, 202)
+position = Vector2(644.00006, 202.00002)
 scale = Vector2(0.18197225, 0.18197225)
 ir = "inicio.tscn"
 
@@ -29,7 +31,7 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_86ap7")
 
 [node name="ShadowPlayer2" parent="." unique_id=1498380138 instance=ExtResource("1_krot7")]
-position = Vector2(484, 266)
+position = Vector2(496, 278.00003)
 scale = Vector2(0.18197225, 0.18197225)
 ir = "inicio_2.tscn"
 
@@ -49,12 +51,46 @@ position = Vector2(792, 281)
 scale = Vector2(0.18197225, 0.18197225)
 ir = "teste_obj.tscn"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowPlayer3" unique_id=1368188326]
+position = Vector2(0, 5.4953613)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_86ap7")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShadowPlayer3" unique_id=1113542509]
+position = Vector2(6.6359863, -4.354126)
+scale = Vector2(0.7039313, 0.7039313)
+texture = ExtResource("4_uhids")
+
 [node name="ShadowPlayer4" parent="." unique_id=2014151812 instance=ExtResource("1_krot7")]
 position = Vector2(526, 451)
 scale = Vector2(0.18197225, 0.18197225)
 ir = "teste_obj.tscn"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowPlayer4" unique_id=1770264820]
+position = Vector2(0, 5.4953613)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_86ap7")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShadowPlayer4" unique_id=1336527631]
+position = Vector2(6.6359863, -4.354126)
+scale = Vector2(0.7039313, 0.7039313)
+texture = ExtResource("4_uhids")
+
 [node name="ShadowPlayer5" parent="." unique_id=1395144112 instance=ExtResource("1_krot7")]
 position = Vector2(769, 455)
 scale = Vector2(0.18197225, 0.18197225)
 ir = "teste_obj.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowPlayer5" unique_id=1591183379]
+position = Vector2(0, 5.4953613)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_86ap7")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShadowPlayer5" unique_id=965600896]
+position = Vector2(6.6359863, -4.354126)
+scale = Vector2(0.7039313, 0.7039313)
+texture = ExtResource("4_uhids")
+
+[node name="Fodareu" parent="." unique_id=1299819640 instance=ExtResource("4_reixx")]
+position = Vector2(639, 337)
+scale = Vector2(3, 3)

@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cdpc4cd0rle52"]
+
+[node name="Fogareu" type="RigidBody2D" unique_id=1264262512]
+gravity_scale = 0.0

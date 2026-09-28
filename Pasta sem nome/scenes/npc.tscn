@@ -180,6 +180,7 @@ shape = SubResource("CircleShape2D_80cng")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area" unique_id=1872441807]
 shape = SubResource("CircleShape2D_toidv")
+disabled = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1451071805]
 autostart = true

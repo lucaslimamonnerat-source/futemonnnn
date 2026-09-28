@@ -3,7 +3,7 @@ Nathan: [[Hi|Hello|Howdy]], seja bem vindo.
 Nathan: Escolha.
 - Cortar Árvore
 	if State.axe_state == 0:
-		Nathan: SE FUDEU
+		Nathan: OTÁRIO
 		=> END
 	else:
 		Nathan: AAAAAAAAAA

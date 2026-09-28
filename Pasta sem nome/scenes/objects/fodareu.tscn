@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dske1gb86d374"]
+
+[ext_resource type="Texture2D" uid="uid://cen2amocwv1jl" path="res://sprites/Cenario/campfire_16x16.png" id="1_6g6bx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ofdh"]
+atlas = ExtResource("1_6g6bx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jg0e"]
+atlas = ExtResource("1_6g6bx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igymw"]
+atlas = ExtResource("1_6g6bx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id1i4"]
+atlas = ExtResource("1_6g6bx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6g6bx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ofdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jg0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igymw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id1i4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ofdh"]
+
+[node name="Fodareu" type="StaticBody2D" unique_id=1299819640]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1073241564]
+sprite_frames = SubResource("SpriteFrames_6g6bx")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747336927]
+shape = SubResource("CircleShape2D_8ofdh")

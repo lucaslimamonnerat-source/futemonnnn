@@ -1,0 +1,14 @@
+~ start
+Gambit: [[Oi|Eae|Olá]], bem vindo ao diálogo.
+if State.amazon == 0:
+	set State.amazon = 1
+	Gambit: Arroz em cima ou embaixo do feijão?
+	- Em cima
+		Gambit: Que bom.
+		Prossiga sua rota
+	- Em baixo:
+		Gambit: Seu Nojento
+		Suma
+else:
+	Gambit: Já conversamos muito. Vá embora
+=> END
