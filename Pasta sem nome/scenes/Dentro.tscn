@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bepprq88ri2g0" path="res://sprites/Milena2.0/MilenaBackWalk.png" id="9_kpr62"]
 [ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="10_bjnk6"]
 [ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="11_wrano"]
+[ext_resource type="AudioStream" uid="uid://dl04d0ol22ryj" path="res://musics/terrorcasa_c9mwisQv.mp3" id="13_wrano"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kcq6"]
 texture = ExtResource("1_ydpud")
@@ -265,3 +266,10 @@ offset_right = 586.0
 offset_bottom = 302.0
 scale = Vector2(0.3193091, 0.3193091)
 text = "PORTA AQUI"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=42610650]
+stream = ExtResource("13_wrano")
+volume_db = -10.823
+autoplay = true
+bus = &"Music"
+parameters/looping = true
