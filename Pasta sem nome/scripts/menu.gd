@@ -69,6 +69,12 @@ func _unhandled_input(event):
 						if about:
 							about.visible = true
 							about.get_node("Panel/HBoxContainer/VBoxContainer/Label").text = "Nome: " + State.playerAtual
+							if State.playerAtual == "Milena":
+								about.get_node("Panel/HBoxContainer/VBoxContainer/TextureRect").texture = load("res://sprites/Milena2.0/MilenaDeFrente.png")
+								about.get_node("Panel/HBoxContainer/VBoxContainer/Label3").text = "Milena é uma jovem exploradora e jornalista em busca de conhecer os limites do mundo"
+							elif State.playerAtual == "Iris":
+								about.get_node("Panel/HBoxContainer/VBoxContainer/TextureRect").texture = load("res://sprites/Iris/Iris.png")
+								about.get_node("Panel/HBoxContainer/VBoxContainer/Label3").text = "Irís é uma jovem que precisa voltar para casa e descobrirá um mundo totalmente novo"
 					3:
 						SistemadeSave.save_game()
 						print("Jogo Salvo com Sucesso!")
