@@ -66,6 +66,7 @@ func _unhandled_input(event):
 						var about = get_tree().get_first_node_in_group("about")
 						if about:
 							about.visible = true
+							about.get_node("Panel/HBoxContainer/VBoxContainer/Label").text = "Nome: " + State.playerAtual
 					3:
 						SistemadeSave.save_game()
 						print("Jogo Salvo com Sucesso!")

@@ -1,8 +1,9 @@
 extends CharacterBody2D
-
 @onready var ground_detector: RayCast2D = $GroundDetector
 @onready var playerWalkingAudioStream = $playerandando
 @onready var playerBatendoAudioStream = $playerbatendo
+@export var atualPlayer = ""
+
 
 # Áudios dos terrenos (substitua pelos caminhos reais)
 var grass_audio = preload("res://efeitosonoros/player_walking.mp3")
@@ -24,6 +25,7 @@ var inventory = Inv.items
 @onready var marcado: Marker2D = $Direction
 
 func _ready():
+	State.playerAtual = atualPlayer
 	randomize()
 	print(">>> Jogador _ready. Game.vindo_da_casa=", Game.vindo_da_casa, " Game.ponto_retorno=", Game.ponto_retorno)
 

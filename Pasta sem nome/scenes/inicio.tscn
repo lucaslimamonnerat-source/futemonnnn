@@ -5169,6 +5169,7 @@ tile_set = SubResource("TileSet_6yb2m")
 z_index = 1000
 position = Vector2(-14, -351)
 scale = Vector2(1.5, 1.5)
+atualPlayer = "Milena"
 
 [node name="Camera2D2" type="Camera2D" parent="player" unique_id=881810068]
 position = Vector2(0.6525879, 2.0007782)
