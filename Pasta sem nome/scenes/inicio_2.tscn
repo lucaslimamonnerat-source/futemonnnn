@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cnnfpershgsg3" path="res://sprites/Iris/2IrisSideIdle_rotated.png" id="4_dhgnu"]
 [ext_resource type="Texture2D" uid="uid://u3ekgtrj2s84" path="res://sprites/Iris/2IrisSideWalk_rotated.png" id="5_gavhj"]
 [ext_resource type="Texture2D" uid="uid://degfgsmmjb8nl" path="res://sprites/Iris/1IrisWalk.png" id="6_v3y1w"]
+[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="7_dhgnu"]
+[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="8_gavhj"]
+[ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="9_v3y1w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7sjxx"]
 atlas = ExtResource("2_dcih5")
@@ -179,3 +182,9 @@ zoom = Vector2(4, 4)
 limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="Menu" parent="player" unique_id=342042241 instance=ExtResource("7_dhgnu")]
+
+[node name="CanvasLayer" parent="player" unique_id=1132434581 instance=ExtResource("8_gavhj")]
+
+[node name="Panel" parent="player" unique_id=1711709439 instance=ExtResource("9_v3y1w")]

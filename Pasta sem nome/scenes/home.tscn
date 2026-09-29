@@ -33,7 +33,7 @@ shape = SubResource("RectangleShape2D_86ap7")
 [node name="ShadowPlayer2" parent="." unique_id=1498380138 instance=ExtResource("1_krot7")]
 position = Vector2(496, 278.00003)
 scale = Vector2(0.18197225, 0.18197225)
-ir = "res://scenes/iris.tscn"
+ir = "inicio_2.tscn"
 
 [node name="1IrisIdle" type="Sprite2D" parent="ShadowPlayer2" unique_id=1118261105]
 position = Vector2(4.121582, -1.373764)

@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var menu = $Control
 @onready var audio_menu = $AudioMenu  # Ajuste se necessário
 @onready var aviso_save = $AvisoSave
+@onready var nome = $Control/NinePatchRect/VBoxContainer/RichTextLabel3
 
 enum ScreenLoaded { NOTHING, JUST_MENU, PARTY_SCREEN, AUDIO_MENU }
 var screen_loaded = ScreenLoaded.NOTHING
@@ -47,6 +48,7 @@ func _unhandled_input(event):
 					select_arrow.position.y = 5
 
 		ScreenLoaded.JUST_MENU:
+			nome.text = State.playerAtual
 			if event.is_action_pressed("menu") or event.is_action_pressed("voltar"):
 				_close_menu()
 			elif event.is_action_pressed("ataque"):
