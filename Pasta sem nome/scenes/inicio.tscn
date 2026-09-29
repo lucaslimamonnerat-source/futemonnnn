@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://b4t32p7b3t2pw" path="res://scenes/objects/item_test.tscn" id="25_hwoes"]
 [ext_resource type="Texture2D" uid="uid://bepprq88ri2g0" path="res://sprites/Milena2.0/MilenaBackWalk.png" id="25_upp7r"]
 [ext_resource type="PackedScene" uid="uid://xexnllv60go2" path="res://scenes/actions/pick.tscn" id="26_k2hld"]
+[ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="26_ncvtg"]
 [ext_resource type="Resource" uid="uid://b6bfd77bfpivd" path="res://dialogue/item_pick.dialogue" id="27_k2hld"]
 [ext_resource type="AudioStream" uid="uid://c3roru2bdwmcy" path="res://musics/aimmeucuzinhopreto.mp3" id="28_yae6b"]
 [ext_resource type="Resource" uid="uid://dv2x6ufbleyby" path="res://dialogue/npc.dialogue" id="31_c7kb7"]
@@ -5189,6 +5190,8 @@ position = Vector2(0, -2)
 scale = Vector2(0.11458333, 0.11458333)
 sprite_frames = SubResource("SpriteFrames_63cqi")
 animation = &"runB"
+
+[node name="Panel" parent="player" unique_id=338476807 instance=ExtResource("26_ncvtg")]
 
 [node name="Bush" parent="." unique_id=1769287671 instance=ExtResource("18_75f84")]
 position = Vector2(-364, -142)

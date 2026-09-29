@@ -62,7 +62,10 @@ func _unhandled_input(event):
 							arrow_inv.position = Vector2(9, 7)
 							select_arrow.visible = false
 							screen_loaded = ScreenLoaded.PARTY_SCREEN
-					2: pass
+					2: 
+						var about = get_tree().get_first_node_in_group("about")
+						if about:
+							about.visible = true
 					3:
 						SistemadeSave.save_game()
 						print("Jogo Salvo com Sucesso!")

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://fg4ehg7q57oa"]
+
+[ext_resource type="Texture2D" uid="uid://dc3cg8enmbnq7" path="res://sprites/Milena2.0/MilenaDeFrente.png" id="1_d0xtp"]
+
+[node name="Panel" type="Panel" unique_id=338476807 groups=["about"]]
+custom_minimum_size = Vector2(250, 380)
+custom_maximum_size = Vector2(250, 380)
+offset_right = 317.0
+offset_bottom = 468.54153
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1306386996]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 35.0
+offset_right = 320.0
+offset_bottom = 5.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=224006565]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1458026371]
+custom_minimum_size = Vector2(60, 120)
+custom_maximum_size = Vector2(60, 120)
+layout_mode = 2
+texture = ExtResource("1_d0xtp")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=899378407]
+layout_mode = 2
+text = "
+Nome: Milena"
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=374956173]
+layout_mode = 2
+text = "
+Sobre:"
+
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1798500621]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "Milena é uma jovem exploradora e jornalista em busca de conhecer os limites do mundo"
+autowrap_mode = 2
