@@ -7,7 +7,7 @@ func _ready() -> void:
 	
 
 func _on_continuar_pressed():
-	SistemadeSave.load_game()
+	get_tree().change_scene_to_file("res://scenes/savePersonagens.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqdtkw12gvth3"]
 
-[ext_resource type="Script" uid="uid://u5rgjhwktxc3" path="res://scenes/menu_start.gd" id="1_ccu5i"]
+[ext_resource type="Script" uid="uid://u5rgjhwktxc3" path="res://scripts/menu_start.gd" id="1_ccu5i"]
 [ext_resource type="Texture2D" uid="uid://cg3k42bwmofcy" path="res://sprites/images.jpg" id="2_4jmj5"]
 [ext_resource type="FontFile" uid="uid://bj8ekx5a0ddov" path="res://sprites/fonts/GrapeSoda.ttf" id="3_4jmj5"]
 [ext_resource type="FontFile" uid="uid://bd0id0v1iksjl" path="res://sprites/fonts/The Amazing Spider-Man.ttf" id="4_phe8i"]

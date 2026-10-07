@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://brce2wawbh4kc"]
 
-[ext_resource type="Script" uid="uid://botut8iafo6v1" path="res://scenes/npc.gd" id="1_abqhh"]
+[ext_resource type="Script" uid="uid://botut8iafo6v1" path="res://scripts/npc.gd" id="1_abqhh"]
 [ext_resource type="Texture2D" uid="uid://bfhom6tih1ihp" path="res://sprites/Puny-Characters/Human-Worker-Red.png" id="1_nh2m4"]
 [ext_resource type="PackedScene" uid="uid://doin254c401aj" path="res://scenes/dialogue.tscn" id="3_rv78h"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abqhh"]
 atlas = ExtResource("1_nh2m4")

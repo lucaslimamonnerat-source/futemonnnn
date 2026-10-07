@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c78gtuh4ioicp"]
 
 [ext_resource type="Texture2D" uid="uid://c5qda6bt8ha8i" path="res://sprites/Cenario/Grama2.png" id="1_dp8qp"]
-[ext_resource type="Script" uid="uid://bgka2aplu05yu" path="res://scenes/inicio.gd" id="1_miq2r"]
+[ext_resource type="Script" uid="uid://bgka2aplu05yu" path="res://scripts/inicio.gd" id="1_miq2r"]
 [ext_resource type="Texture2D" uid="uid://dryvvch7h73nr" path="res://sprites/Cenario/RuaTileset.png" id="2_1lu1a"]
 [ext_resource type="PackedScene" uid="uid://b3m4yp8xrtpjp" path="res://scenes/arvore.tscn" id="2_fdyee"]
 [ext_resource type="Texture2D" uid="uid://bc6tamosj1l10" path="res://sprites/Cenario/Tijolin.png" id="3_pr8vj"]
@@ -36,6 +36,7 @@
 [ext_resource type="Resource" uid="uid://b6bfd77bfpivd" path="res://dialogue/item_pick.dialogue" id="27_k2hld"]
 [ext_resource type="AudioStream" uid="uid://c3roru2bdwmcy" path="res://musics/aimmeucuzinhopreto.mp3" id="28_yae6b"]
 [ext_resource type="Resource" uid="uid://dv2x6ufbleyby" path="res://dialogue/npc.dialogue" id="31_c7kb7"]
+
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6s4fj"]
 

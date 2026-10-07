@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://da6ekkmkwxm2o"]
 
 [ext_resource type="Texture2D" uid="uid://ctg0bbmoadsr6" path="res://sprites/Butoes/battleBackground.png" id="1_dn72j"]
-[ext_resource type="Script" uid="uid://cskqyyd8oe76y" path="res://scenes/battlefield.gd" id="2_4k1nj"]
+[ext_resource type="Script" uid="uid://cskqyyd8oe76y" path="res://scripts/battlefield.gd" id="2_4k1nj"]
 [ext_resource type="Texture2D" uid="uid://djxplsukjd5qf" path="res://sprites/Butoes/textBox.png" id="2_th188"]
 [ext_resource type="Texture2D" uid="uid://btn1vf4ctxu1o" path="res://sprites/Butoes/atqBtm.png" id="3_6vh42"]
 [ext_resource type="Texture2D" uid="uid://cq4qsablf0x8n" path="res://sprites/Butoes/bagBtm.png" id="4_4k1nj"]
 [ext_resource type="Texture2D" uid="uid://fh6xi23qnpcf" path="res://sprites/Butoes/switchBtm.png" id="5_f4pi3"]
 [ext_resource type="Texture2D" uid="uid://djof0ovxdecq" path="res://sprites/Butoes/runBtm.png" id="6_yahae"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th188"]
 texture = ExtResource("2_th188")

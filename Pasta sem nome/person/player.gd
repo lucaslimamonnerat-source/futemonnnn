@@ -29,10 +29,10 @@ func _ready():
 	randomize()
 	print(">>> Jogador _ready. Game.vindo_da_casa=", Game.vindo_da_casa, " Game.ponto_retorno=", Game.ponto_retorno)
 
-	# Apenas para carregamento de save
-	if Game.is_loading_save:
-		global_position = Game.saved_player_position
-		Game.is_loading_save = false
+	# Aumenta o tamanho apenas se o personagem atual for a Íris
+	if atualPlayer == "Iris":
+		scale = Vector2(1.0, 1.0)
+	# O posicionamento do Save foi removido daqui porque o inicio.gd já faz essa gestão!
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
