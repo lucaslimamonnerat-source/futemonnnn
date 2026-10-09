@@ -137,3 +137,13 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_8wcjs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8up52")
 text = "       ???       "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=606566910]
+layout_mode = 0
+offset_right = 1272.0
+offset_bottom = 333.0
+theme_override_fonts/normal_font = ExtResource("3_45tf1")
+theme_override_font_sizes/normal_font_size = 48
+text = "Continue sua história"
+horizontal_alignment = 1
+vertical_alignment = 1

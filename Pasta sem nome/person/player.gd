@@ -31,7 +31,8 @@ func _ready():
 
 	# Aumenta o tamanho apenas se o personagem atual for a Íris
 	if atualPlayer == "Iris":
-		scale = Vector2(1.0, 1.0)
+		scale = Vector2(6.0,6.0)
+		VELOCIDADE = 320
 	# O posicionamento do Save foi removido daqui porque o inicio.gd já faz essa gestão!
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -149,9 +150,14 @@ func move():
 		# Toca o som de passos se ainda não estiver tocando
 		if !playerWalkingAudioStream.playing:
 			playerWalkingAudioStream.play()
+			
 		var destino = position + input_dir * title_size
+		
+		# 💡 Calcula a duração com base na VELOCIDADE (Distância / Velocidade)
+		var duracao = float(title_size) / float(VELOCIDADE)
+		
 		var tween = create_tween()
-		tween.tween_property(self, "position", destino, 0.2)
+		tween.tween_property(self, "position", destino, duracao)
 		tween.tween_callback(move_false)
 		tentar_encontro()
 
