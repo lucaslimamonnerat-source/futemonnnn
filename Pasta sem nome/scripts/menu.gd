@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+#codigomenu
 @onready var select_arrow = $Control/NinePatchRect/TextureRect
 @onready var menu = $Control
 @onready var audio_menu = $AudioMenu
@@ -102,7 +103,28 @@ func _unhandled_input(event):
 						menu.visible = false
 						screen_loaded = ScreenLoaded.AUDIO_MENU
 					5:
-						get_tree().change_scene_to_file("res://scenes/savePersonagens.tscn")
+						# Salva o personagem atual para restaurá-lo depois se necessário
+						var personagem_atual = State.playerAtual
+						var tem_outro_save = false
+						
+						# Lista de todos os personagens possíveis no jogo
+						var todos_personagens = ["Milena", "Iris"] # Adicione outros nomes aqui se tiver mais
+						
+						for personagem in todos_personagens:
+							if personagem != personagem_atual:
+								State.playerAtual = personagem
+								if SistemadeSave.has_save():
+									tem_outro_save = true
+									break
+						
+						# Restaura o personagem atual antes de mudar de cena
+						State.playerAtual = personagem_atual
+						
+						# Se achou save de outro personagem, vai para savePersonagens, senão vai para home
+						if tem_outro_save:
+							get_tree().change_scene_to_file("res://scenes/savePersonagens.tscn")
+						else:
+							get_tree().change_scene_to_file("res://scenes/home.tscn")
 					6:
 						_show_quit_confirmation()
 			elif event.is_action_pressed("down"):
@@ -163,7 +185,7 @@ func _close_menu():
 		about.visible = false
 	State.menu_aberto = false
 	select_arrow.visible = true
-	screen_loaded = ScreenLoaded.NOTHING
+	screen_loaded = ScreenLoaded.JUST_MENU
 	selected_option = 0
 
 func _on_audio_menu_closed() -> void:

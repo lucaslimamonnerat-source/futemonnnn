@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bj8ekx5a0ddov" path="res://sprites/fonts/GrapeSoda.ttf" id="3_45tf1"]
 [ext_resource type="Texture2D" uid="uid://dc3cg8enmbnq7" path="res://sprites/Milena2.0/MilenaDeFrente.png" id="4_d305w"]
 [ext_resource type="Texture2D" uid="uid://dxmktfvgj7hwf" path="res://sprites/Iris/IrisMENUDESAVE.png" id="5_m82qw"]
+[ext_resource type="FontFile" uid="uid://db377vhd2sd2x" path="res://sprites/fonts/pokemon_pixel_font.ttf" id="6_gsuye"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvb7j"]
 texture = ExtResource("2_gsuye")
@@ -147,3 +148,13 @@ theme_override_font_sizes/normal_font_size = 48
 text = "Continue sua história"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=223382276]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 681.0
+offset_right = 168.0
+offset_bottom = 719.0
+theme_override_fonts/normal_font = ExtResource("6_gsuye")
+theme_override_font_sizes/normal_font_size = 36
+text = "ESC - VOLTAR"
