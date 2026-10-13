@@ -9,7 +9,7 @@ extends CharacterBody2D
 var grass_audio = preload("res://efeitosonoros/player_walking.mp3")
 var concrete_audio = preload("res://efeitosonoros/12_Step_wood_03.wav")
 
-var VELOCIDADE = 200
+@export var VELOCIDADE = 200
 var situationAtual = "idle"
 var title_size = 16
 var moving = false
@@ -20,11 +20,14 @@ var porta_proxima = null
 var interagindo = false
 var batata = load("res://sprites/Inventory/Axe.png")
 var cena_destino = ""
+@onready var flash_light: PointLight2D = $flashLight
 var inventory = Inv.items
 @onready var actionable_finder: Area2D = $Direction/ActionableFinger
 @onready var marcado: Marker2D = $Direction
+var targetPosition: Vector2
 
 func _ready():
+	
 	State.playerAtual = atualPlayer
 	randomize()
 	print(">>> Jogador _ready. Game.vindo_da_casa=", Game.vindo_da_casa, " Game.ponto_retorno=", Game.ponto_retorno)
@@ -47,6 +50,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				inventory = Inv.items
 				Inventory._novo_item(batata)
 			return
+	if Input.is_action_just_pressed("mLeft"):
+		targetPosition = get_global_mouse_position()
+	elif Input.is_action_just_pressed("mRight"):
+		flash_light.enabled = not flash_light.enabled
 
 func entrou_no_mato(mato):
 	matos.append(mato)
@@ -89,6 +96,11 @@ func _process(delta: float) -> void:
 	check_ground_type()
 	
 
+	if targetPosition:
+		flash_light.look_at(targetPosition)
+	else:
+		print("n achado")
+	
 	if podeAndar == 1:
 		if moving:
 			return
