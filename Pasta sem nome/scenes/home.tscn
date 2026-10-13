@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://di4m78806k32c"]
 
 [ext_resource type="PackedScene" uid="uid://ckl1gd52trg6f" path="res://scenes/objects/shadow_player.tscn" id="1_krot7"]
+[ext_resource type="Script" uid="uid://sojxua8xw523" path="res://scenes/home.gd" id="1_yxilm"]
 [ext_resource type="Texture2D" uid="uid://dw37t765fxc7v" path="res://sprites/Milena2.0/MilenaIdleAnimation.png" id="2_w18ys"]
 [ext_resource type="Texture2D" uid="uid://7xjviyvfvr0d" path="res://sprites/Iris/1IrisIdle.png" id="3_reixx"]
 [ext_resource type="PackedScene" uid="uid://dske1gb86d374" path="res://scenes/objects/fodareu.tscn" id="4_reixx"]
@@ -13,6 +14,7 @@ size = Vector2(252.78577, 362.69287)
 size = Vector2(236.29993, 236.29974)
 
 [node name="home" type="Node2D" unique_id=1393670583]
+script = ExtResource("1_yxilm")
 
 [node name="ShadowPlayer" parent="." unique_id=2006692589 instance=ExtResource("1_krot7")]
 position = Vector2(644.00006, 202.00002)
@@ -24,6 +26,13 @@ position = Vector2(0, -65.94409)
 scale = Vector2(3.0338874, 3.0338874)
 texture = ExtResource("2_w18ys")
 hframes = 2
+
+[node name="Button" type="Button" parent="ShadowPlayer/MilenaIdleAnimation" unique_id=1027651395]
+visible = false
+offset_left = -41.660522
+offset_top = -36.22644
+offset_right = 41.66028
+offset_bottom = 83.32074
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowPlayer" unique_id=710392239]
 position = Vector2(0, 5.4953613)
@@ -40,6 +49,13 @@ position = Vector2(4.121582, -1.373764)
 scale = Vector2(17.001215, 17.001215)
 texture = ExtResource("3_reixx")
 hframes = 2
+
+[node name="Button" type="Button" parent="ShadowPlayer2/1IrisIdle" unique_id=834297719]
+visible = false
+offset_left = -7.0303
+offset_top = -7.0303154
+offset_right = 7.191929
+offset_bottom = 7.838375
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowPlayer2" unique_id=1216287573]
 position = Vector2(6.8686523, 1.3737946)
@@ -61,6 +77,13 @@ position = Vector2(6.6359863, -4.354126)
 scale = Vector2(0.7039313, 0.7039313)
 texture = ExtResource("4_uhids")
 
+[node name="Button" type="Button" parent="ShadowPlayer3" unique_id=1412538852]
+visible = false
+offset_left = -41.660522
+offset_top = -36.22644
+offset_right = 41.66028
+offset_bottom = 83.32074
+
 [node name="ShadowPlayer4" parent="." unique_id=2014151812 instance=ExtResource("1_krot7")]
 position = Vector2(526, 451)
 scale = Vector2(0.18197225, 0.18197225)
@@ -76,6 +99,13 @@ position = Vector2(6.6359863, -4.354126)
 scale = Vector2(0.7039313, 0.7039313)
 texture = ExtResource("4_uhids")
 
+[node name="Button" type="Button" parent="ShadowPlayer4" unique_id=1711283636]
+visible = false
+offset_left = -41.660522
+offset_top = -36.22644
+offset_right = 41.66028
+offset_bottom = 83.32074
+
 [node name="ShadowPlayer5" parent="." unique_id=1395144112 instance=ExtResource("1_krot7")]
 position = Vector2(769, 455)
 scale = Vector2(0.18197225, 0.18197225)
@@ -90,6 +120,13 @@ shape = SubResource("RectangleShape2D_86ap7")
 position = Vector2(6.6359863, -4.354126)
 scale = Vector2(0.7039313, 0.7039313)
 texture = ExtResource("4_uhids")
+
+[node name="Button" type="Button" parent="ShadowPlayer5" unique_id=587861268]
+visible = false
+offset_left = -41.660522
+offset_top = -36.22644
+offset_right = 41.66028
+offset_bottom = 83.32074
 
 [node name="Fodareu" parent="." unique_id=1299819640 instance=ExtResource("4_reixx")]
 position = Vector2(639, 337)
