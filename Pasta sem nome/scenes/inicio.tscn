@@ -37,7 +37,6 @@
 [ext_resource type="AudioStream" uid="uid://c3roru2bdwmcy" path="res://musics/aimmeucuzinhopreto.mp3" id="28_yae6b"]
 [ext_resource type="Resource" uid="uid://dv2x6ufbleyby" path="res://dialogue/npc.dialogue" id="31_c7kb7"]
 
-
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6s4fj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7kb7"]
@@ -5171,6 +5170,7 @@ z_index = 1000
 position = Vector2(-14, -351)
 scale = Vector2(1.5, 1.5)
 atualPlayer = "Milena"
+VELOCIDADE = 100
 
 [node name="Camera2D2" type="Camera2D" parent="player" unique_id=881810068]
 position = Vector2(0.6525879, 2.0007782)

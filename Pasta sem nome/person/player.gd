@@ -4,7 +4,6 @@ extends CharacterBody2D
 @onready var playerBatendoAudioStream = $playerbatendo
 @export var atualPlayer = ""
 
-
 # Áudios dos terrenos (substitua pelos caminhos reais)
 var grass_audio = preload("res://efeitosonoros/player_walking.mp3")
 var concrete_audio = preload("res://efeitosonoros/12_Step_wood_03.wav")
@@ -34,9 +33,8 @@ func _ready():
 
 	# Aumenta o tamanho apenas se o personagem atual for a Íris
 	if atualPlayer == "Iris":
-		scale = Vector2(6.0,6.0)
-		VELOCIDADE = 320
-	# O posicionamento do Save foi removido daqui porque o inicio.gd já faz essa gestão!
+		scale = Vector2(6.0, 6.0)
+	# VELOCIDADE agora é definida individualmente pelo inspetor em cada personagem
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
