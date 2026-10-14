@@ -25,6 +25,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 State="*uid://bc20tda0j6px4"
 Actionable="*uid://daem46mnmbe8g"
 Inventory="*uid://chb38ly1s16ed"
+MusicManager="*uid://neine2wc6nur"
 
 [display]
 

@@ -4,10 +4,33 @@ extends Node2D
 @export var escala_normal: Vector2 = Vector2(0.182, 0.182)
 @export var tempo_animacao: float = 0.15
 
+const selecionoupersonagem = "res://efeitosonoros/personagemselecionado.mp3"
+const menumudandodefoco = "res://efeitosonoros/menumudandodefoco.wav"
+
 var personagens: Array = []
 var indice_selecionado: int = 0
 
+var audio_foco: AudioStreamPlayer
+var audio_selecao: AudioStreamPlayer
+
+# Referência guardada da árvore para usar em trocas de cena
+var tree_ref: SceneTree
+
 func _ready() -> void:
+	# Salva a referência da árvore logo no início
+	MusicManager.tocar_musica("res://musics/menustartmusic.mp3")
+	tree_ref = get_tree()
+	
+	# Configura o áudio de mudança de foco
+	audio_foco = AudioStreamPlayer.new()
+	audio_foco.stream = load(menumudandodefoco)
+	add_child(audio_foco)
+	
+	# Configura o áudio de confirmação (abrir o mundo)
+	audio_selecao = AudioStreamPlayer.new()
+	audio_selecao.stream = load(selecionoupersonagem)
+	add_child(audio_selecao)
+
 	carregar_personagens(self)
 	
 	if personagens.size() > 0:
@@ -70,6 +93,10 @@ func encontrar_proximo_por_direcao(dir: Vector2) -> void:
 		atualizar_selecao(melhor_indice)
 
 func atualizar_selecao(novo_indice: int) -> void:
+	# Toca o som de foco APENAS se o índice realmente mudou (não toca no _ready)
+	if novo_indice != indice_selecionado and audio_foco.stream:
+		audio_foco.play()
+
 	if personagens.size() > indice_selecionado:
 		animar_personagem(personagens[indice_selecionado], escala_normal)
 		
@@ -81,13 +108,27 @@ func animar_personagem(personagem: Area2D, escala_alvo: Vector2) -> void:
 	var tween = create_tween()
 	tween.tween_property(personagem, "scale", escala_alvo, tempo_animacao).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 
+# Função que lida com o clique do mouse no personagem
 func _on_personagem_input_event(_viewport: Node, event: InputEvent, _shape_idx: int, personagem: Area2D) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var index = personagens.find(personagem)
 		if index != -1:
 			atualizar_selecao(index)
-			ativar_personagem(personagem)
+			ativar_personagem(personagem) # Manda direto pro mundo do personagem
 
 func ativar_personagem(personagem: Area2D) -> void:
+	# 1. Manda o MusicManager fazer o fade out de 2 segundos
+	MusicManager.parar_musica_com_fadeout(2.0)
+	
+	# 2. Toca o som de confirmação
+	if audio_selecao.stream:
+		var temp_player = AudioStreamPlayer.new()
+		temp_player.stream = audio_selecao.stream
+		temp_player.volume_db = -4.5 # <--- AQUI! Abaixa o volume para ~60%
+		tree_ref.root.add_child(temp_player)
+		temp_player.play()
+		temp_player.finished.connect(temp_player.queue_free)
+		
+	# 3. Muda de cena imediatamente
 	if "ir" in personagem and personagem.ir != "":
-		get_tree().change_scene_to_file("res://scenes/" + personagem.ir)
+		tree_ref.change_scene_to_file("res://scenes/" + personagem.ir)

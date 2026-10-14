@@ -5,20 +5,34 @@ extends Control
 @export var deslocamento_esquerda: float = 7.0
 @export var tempo_animacao: float = 0.15
 
+const SOM_FOCO = "res://efeitosonoros/menumudandodefoco.wav" # Caminho do som
+
 var cores_originais: Dictionary = {}
 var posricoes_originais: Dictionary = {}
+var botoes: Array[Button] = [] # Lista para guardar os botões e facilitar a navegação
 
-# Called when the node enters the scene tree for the first time.
+var audio_player: AudioStreamPlayer
+var pode_tocar_som: bool = false # Evita tocar o som assim que o menu abre
+
 func _ready() -> void:
+	# Configura o áudio de mudança de foco
+	audio_player = AudioStreamPlayer.new()
+	MusicManager.tocar_musica("res://musics/menustartmusic.mp3")
+	audio_player.stream = load(SOM_FOCO)
+	add_child(audio_player)
+
 	configurar_botoes(self)
 	conectar_sinais_foco(self)
 
 	# Garante que o primeiro botão recebe o foco inicial
 	$Button.grab_focus()
+	pode_tocar_som = true # Libera o som depois que o menu já carregou
 
 func configurar_botoes(node: Node) -> void:
 	for child in node.get_children():
 		if child is Button:
+			botoes.append(child) # Adiciona o botão na nossa lista
+			
 			child.pivot_offset = Vector2(0, child.size.y / 2.0)
 			posricoes_originais[child] = child.position
 			
@@ -44,11 +58,32 @@ func conectar_sinais_foco(node: Node) -> void:
 		if child.get_child_count() > 0:
 			conectar_sinais_foco(child)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# NOVA FUNÇÃO: Lê o WASD para navegar no menu
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		var foco_atual = get_viewport().gui_get_focus_owner()
+		
+		if foco_atual is Button and foco_atual in botoes:
+			var index = botoes.find(foco_atual)
+			
+			if event.keycode == KEY_W:
+				var prox_index = (index - 1 + botoes.size()) % botoes.size()
+				botoes[prox_index].grab_focus()
+				get_viewport().set_input_as_handled() # Impede que o Godot tente fazer outra coisa
+				
+			elif event.keycode == KEY_S:
+				var prox_index = (index + 1) % botoes.size()
+				botoes[prox_index].grab_focus()
+				get_viewport().set_input_as_handled()
+
 func _process(delta: float) -> void:
 	pass
 
 func _on_botao_focus_entered(botao: Button) -> void:
+	# Toca o som de foco
+	if pode_tocar_som and audio_player and audio_player.stream:
+		audio_player.play()
+
 	var tween = create_tween().set_parallel(true)
 	
 	tween.tween_property(botao, "scale", escala_focado, tempo_animacao).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

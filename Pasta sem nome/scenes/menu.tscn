@@ -1961,7 +1961,6 @@ text = "Jogo Salvo com Sucesso!!!"
 tab_size = 7
 
 [node name="AudioMenu" type="CanvasLayer" parent="." unique_id=197823498]
-visible = false
 script = ExtResource("5_4ytvr")
 
 [node name="Control" type="Control" parent="AudioMenu" unique_id=1220118674]
@@ -1975,9 +1974,9 @@ offset_bottom = 43.0
 [node name="NinePatchRect" type="NinePatchRect" parent="AudioMenu/Control" unique_id=1774265509]
 texture_filter = 1
 layout_mode = 0
-offset_left = -4.0
+offset_left = -23.000002
 offset_top = -5.0
-offset_right = 1217.4266
+offset_right = 1216.0211
 offset_bottom = 632.8702
 scale = Vector2(1.0798848, 1.1742201)
 texture = ExtResource("1_yqeox")
@@ -1990,8 +1989,8 @@ patch_margin_bottom = 6
 layout_mode = 0
 offset_left = -188.90904
 offset_top = 5.961404
-offset_right = 1264.0238
-offset_bottom = 609.7665
+offset_right = 1411.091
+offset_bottom = 625.9614
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="AudioMenu/Control/NinePatchRect/VBoxContainer" unique_id=1117325843]
