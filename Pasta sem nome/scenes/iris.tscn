@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cjc1qbqj4jeya" path="res://sprites/Cenario/light_point.webp" id="17_eayh0"]
 [ext_resource type="Texture2D" uid="uid://d4folgpg7d1mg" path="res://sprites/Cenario/torch_light.png" id="18_5d16s"]
 [ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="18_hhgf8"]
+[ext_resource type="PackedScene" uid="uid://dlhj70yi3rm8f" path="res://scenes/hud.tscn" id="20_hhgf8"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6br01"]
 
@@ -2676,3 +2677,5 @@ script = ExtResource("16_5d16s")
 [node name="CanvasLayer" parent="player" unique_id=1132434581 instance=ExtResource("17_5d16s")]
 
 [node name="Panel" parent="player" unique_id=1711709439 instance=ExtResource("18_hhgf8")]
+
+[node name="HUD" parent="." unique_id=816163966 instance=ExtResource("20_hhgf8")]

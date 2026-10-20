@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 		tempo_decorrido += delta
 		
 		# Se passou de 3 segundos
-		if tempo_decorrido >= 3.0:
+		if tempo_decorrido >= 0.1:
 			State.batteryLant -= 1
 			tempo_decorrido = 0.0 # Reinicia o cronômetro
 	else:

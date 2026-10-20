@@ -50,10 +50,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 	#if Input.is_action_just_pressed("mLeft"):
 		#targetPosition = get_global_mouse_position()
-	if flash_light:
+	if flash_light and State.batteryLant > 1:
 		if Input.is_action_just_pressed("mRight"):
 			flash_light.enabled = not flash_light.enabled
 			State.batteryOn = not State.batteryOn
+	elif flash_light and State.batteryLant < 1:
+		flash_light.enabled = not flash_light.enabled
 
 func entrou_no_mato(mato):
 	matos.append(mato)
