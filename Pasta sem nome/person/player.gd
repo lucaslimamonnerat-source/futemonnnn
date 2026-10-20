@@ -32,8 +32,8 @@ func _ready():
 	print(">>> Jogador _ready. Game.vindo_da_casa=", Game.vindo_da_casa, " Game.ponto_retorno=", Game.ponto_retorno)
 
 	# Aumenta o tamanho apenas se o personagem atual for a Íris
-	if atualPlayer == "Iris":
-		scale = Vector2(6.0, 6.0)
+	#if atualPlayer == "Iris":
+		#scale = Vector2(6.0, 6.0)
 	# VELOCIDADE agora é definida individualmente pelo inspetor em cada personagem
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -96,8 +96,8 @@ func _process(delta: float) -> void:
 
 	if targetPosition:
 		flash_light.look_at(targetPosition)
-	else:
-		print("n achado")
+	#else:
+		#print("n achado")
 	
 	if podeAndar == 1:
 		if moving:

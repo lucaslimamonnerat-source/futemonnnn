@@ -12,9 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cnnfpershgsg3" path="res://sprites/Iris/2IrisSideIdle_rotated.png" id="10_eayh0"]
 [ext_resource type="Texture2D" uid="uid://u3ekgtrj2s84" path="res://sprites/Iris/2IrisSideWalk_rotated.png" id="11_5d16s"]
 [ext_resource type="Texture2D" uid="uid://degfgsmmjb8nl" path="res://sprites/Iris/1IrisWalk.png" id="12_hhgf8"]
-[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="13_wnbq4"]
-[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="14_3aj7v"]
-[ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="15_3xjck"]
 [ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="16_625vj"]
 [ext_resource type="Texture2D" uid="uid://cjc1qbqj4jeya" path="res://sprites/Cenario/light_point.webp" id="17_eayh0"]
 [ext_resource type="Texture2D" uid="uid://d4folgpg7d1mg" path="res://sprites/Cenario/torch_light.png" id="18_5d16s"]
@@ -2648,22 +2645,16 @@ limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Menu" parent="chão/player" unique_id=342042241 instance=ExtResource("13_wnbq4")]
-
-[node name="CanvasLayer" parent="chão/player" unique_id=1132434581 instance=ExtResource("14_3aj7v")]
-
-[node name="Panel" parent="chão/player" unique_id=1711709439 instance=ExtResource("15_3xjck")]
-
 [node name="PointLight2D" type="PointLight2D" parent="chão/player" unique_id=1210509866]
 position = Vector2(-0.53117436, -3.1462696)
 texture = ExtResource("17_eayh0")
 texture_scale = 0.21
 
 [node name="flashLight" type="PointLight2D" parent="chão/player" unique_id=587712830]
-position = Vector2(0.0027660131, -3.680214)
+position = Vector2(1.0152255, 2.030458)
 energy = 1.75
 texture = ExtResource("18_5d16s")
-offset = Vector2(300, 0)
+offset = Vector2(305.325, -4.245)
 
 [node name="Casa" parent="." unique_id=1167718415 instance=ExtResource("16_625vj")]
 position = Vector2(2.030426, -223.35025)
