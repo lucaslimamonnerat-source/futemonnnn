@@ -6,3 +6,5 @@ var menu_aberto: bool = false
 var audiomenu_aberto: bool = false
 var amazon = 0
 var playerAtual = ""
+var batteryLant = 100
+var batteryOn = true

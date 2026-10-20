@@ -12,9 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://cnnfpershgsg3" path="res://sprites/Iris/2IrisSideIdle_rotated.png" id="10_eayh0"]
 [ext_resource type="Texture2D" uid="uid://u3ekgtrj2s84" path="res://sprites/Iris/2IrisSideWalk_rotated.png" id="11_5d16s"]
 [ext_resource type="Texture2D" uid="uid://degfgsmmjb8nl" path="res://sprites/Iris/1IrisWalk.png" id="12_hhgf8"]
+[ext_resource type="Script" uid="uid://ctpj4wm5ptp0j" path="res://scenes/flash_light.gd" id="16_5d16s"]
 [ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="16_625vj"]
+[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="16_eayh0"]
+[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="17_5d16s"]
 [ext_resource type="Texture2D" uid="uid://cjc1qbqj4jeya" path="res://sprites/Cenario/light_point.webp" id="17_eayh0"]
 [ext_resource type="Texture2D" uid="uid://d4folgpg7d1mg" path="res://sprites/Cenario/torch_light.png" id="18_5d16s"]
+[ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="18_hhgf8"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6br01"]
 
@@ -2654,12 +2658,21 @@ position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1210509866]
-position = Vector2(-0.53117436, -3.1462696)
+position = Vector2(0.8603582, 3.4414527)
+scale = Vector2(0.65021056, 0.65021056)
 texture = ExtResource("17_eayh0")
 texture_scale = 0.21
 
 [node name="flashLight" type="PointLight2D" parent="player" unique_id=587712830]
 position = Vector2(1.0152255, 2.030458)
+scale = Vector2(0.23219953, 0.2604506)
 energy = 1.75
 texture = ExtResource("18_5d16s")
 offset = Vector2(305.325, -4.245)
+script = ExtResource("16_5d16s")
+
+[node name="Menu" parent="player" unique_id=342042241 instance=ExtResource("16_eayh0")]
+
+[node name="CanvasLayer" parent="player" unique_id=1132434581 instance=ExtResource("17_5d16s")]
+
+[node name="Panel" parent="player" unique_id=1711709439 instance=ExtResource("18_hhgf8")]

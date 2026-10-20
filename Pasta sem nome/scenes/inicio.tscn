@@ -5229,7 +5229,7 @@ scale = Vector2(0.18, 0.18)
 
 [node name="Casa" parent="." unique_id=1167718415 instance=ExtResource("20_wjo3y")]
 position = Vector2(17, -421)
-scale = Vector2(1.2, 1.218)
+scale = Vector2(1.2, 1.2594064)
 
 [node name="StaticBody2D" parent="." unique_id=599140305 instance=ExtResource("2_fdyee")]
 position = Vector2(-144.00003, -432.00003)

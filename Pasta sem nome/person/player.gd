@@ -50,8 +50,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 	#if Input.is_action_just_pressed("mLeft"):
 		#targetPosition = get_global_mouse_position()
-	if Input.is_action_just_pressed("mRight"):
-		flash_light.enabled = not flash_light.enabled
+	if flash_light:
+		if Input.is_action_just_pressed("mRight"):
+			flash_light.enabled = not flash_light.enabled
+			State.batteryOn = not State.batteryOn
 
 func entrou_no_mato(mato):
 	matos.append(mato)
@@ -84,7 +86,8 @@ func interagir_com_porta():
 	SceneTransition.change_scene(cena_destino)
 
 func _process(delta: float) -> void:
-	#targetPosition = get_global_mouse_position()
+	print(State.batteryLant)
+	targetPosition = get_global_mouse_position()
 	
 	if Input.is_action_pressed("sair"):
 		get_tree().change_scene_to_file("res://scenes/menu_start.tscn")
@@ -96,8 +99,9 @@ func _process(delta: float) -> void:
 	check_ground_type()
 	
 
-	if targetPosition:
-		flash_light.look_at(targetPosition)
+	if flash_light:
+		if targetPosition:
+			flash_light.look_at(targetPosition)
 	#else:
 		#print("n achado")
 	
@@ -107,7 +111,7 @@ func _process(delta: float) -> void:
 		input_dir = Vector2.ZERO
 		if Input.is_action_pressed("direita"):
 			input_dir = Vector2(1,0)
-			targetPosition = Vector2(1000, 0)
+			#targetPosition = Vector2(1000, 0)
 			situationAtual = "idleL"
 			$animaco.flip_h = false
 			$animaco.play("run")
@@ -116,7 +120,7 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("esquerda"):
 			input_dir = Vector2(-1,0)
-			targetPosition = Vector2(-1000, 0)
+			#targetPosition = Vector2(-1000, 0)
 			situationAtual = "idleL"
 			$animaco.flip_h = true
 			$animaco.play("run")
@@ -125,7 +129,7 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("cima"):
 			input_dir = Vector2(0,-1)
-			targetPosition = Vector2(0, -1000)
+			#targetPosition = Vector2(0, -1000)
 			situationAtual = "idleC"
 			$animaco.flip_h = false
 			$animaco.play("runC")
@@ -134,7 +138,7 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("baixo"):
 			input_dir = Vector2(0,1)
-			targetPosition = Vector2(0, 1000)
+			#targetPosition = Vector2(0, 1000)
 			situationAtual = "idle"
 			$animaco.flip_h = false
 			$animaco.play("runB")

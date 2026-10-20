@@ -18,7 +18,7 @@ texture = ExtResource("1_16s4k")
 hframes = 4
 
 [node name="Porta" parent="." unique_id=837879500 instance=ExtResource("2_l7c5q")]
-position = Vector2(244, 181)
+position = Vector2(244, 182)
 
 [node name="frentedaporta" type="Marker2D" parent="Porta" unique_id=2042976557]
 position = Vector2(9, 71)
