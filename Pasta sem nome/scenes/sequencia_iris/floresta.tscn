@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cnnfpershgsg3" path="res://sprites/Iris/2IrisSideIdle_rotated.png" id="4_boyjn"]
 [ext_resource type="Texture2D" uid="uid://u3ekgtrj2s84" path="res://sprites/Iris/2IrisSideWalk_rotated.png" id="5_keuo4"]
 [ext_resource type="Texture2D" uid="uid://degfgsmmjb8nl" path="res://sprites/Iris/1IrisWalk.png" id="6_6exwj"]
-[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="7_u1e20"]
-[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="8_6wjf1"]
-[ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="9_ps7hd"]
 [ext_resource type="Texture2D" uid="uid://cjc1qbqj4jeya" path="res://sprites/Cenario/light_point.webp" id="10_y7g0e"]
 [ext_resource type="Texture2D" uid="uid://d4folgpg7d1mg" path="res://sprites/Cenario/torch_light.png" id="11_7y2pt"]
 [ext_resource type="PackedScene" uid="uid://b3m4yp8xrtpjp" path="res://scenes/arvore.tscn" id="12_mnwbb"]
@@ -169,7 +166,7 @@ animations = [{
 
 [node name="player" parent="." unique_id=1550785553 instance=ExtResource("1_aa20m")]
 position = Vector2(-420, -108)
-scale = Vector2(0.64, 0.64)
+scale = Vector2(4.878, 4.878)
 atualPlayer = "Iris"
 
 [node name="animaco" type="AnimatedSprite2D" parent="player" unique_id=1899463535]
@@ -188,12 +185,6 @@ zoom = Vector2(4, 4)
 limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
-
-[node name="Menu" parent="player" unique_id=342042241 instance=ExtResource("7_u1e20")]
-
-[node name="CanvasLayer" parent="player" unique_id=1132434581 instance=ExtResource("8_6wjf1")]
-
-[node name="Panel" parent="player" unique_id=1711709439 instance=ExtResource("9_ps7hd")]
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=205317204]
 position = Vector2(-0.53117436, -3.1462696)

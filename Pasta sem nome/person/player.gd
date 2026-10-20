@@ -48,9 +48,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				inventory = Inv.items
 				Inventory._novo_item(batata)
 			return
-	if Input.is_action_just_pressed("mLeft"):
-		targetPosition = get_global_mouse_position()
-	elif Input.is_action_just_pressed("mRight"):
+	#if Input.is_action_just_pressed("mLeft"):
+		#targetPosition = get_global_mouse_position()
+	if Input.is_action_just_pressed("mRight"):
 		flash_light.enabled = not flash_light.enabled
 
 func entrou_no_mato(mato):
@@ -84,6 +84,8 @@ func interagir_com_porta():
 	SceneTransition.change_scene(cena_destino)
 
 func _process(delta: float) -> void:
+	#targetPosition = get_global_mouse_position()
+	
 	if Input.is_action_pressed("sair"):
 		get_tree().change_scene_to_file("res://scenes/menu_start.tscn")
 
@@ -105,6 +107,7 @@ func _process(delta: float) -> void:
 		input_dir = Vector2.ZERO
 		if Input.is_action_pressed("direita"):
 			input_dir = Vector2(1,0)
+			targetPosition = Vector2(1000, 0)
 			situationAtual = "idleL"
 			$animaco.flip_h = false
 			$animaco.play("run")
@@ -113,6 +116,7 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("esquerda"):
 			input_dir = Vector2(-1,0)
+			targetPosition = Vector2(-1000, 0)
 			situationAtual = "idleL"
 			$animaco.flip_h = true
 			$animaco.play("run")
@@ -121,6 +125,7 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("cima"):
 			input_dir = Vector2(0,-1)
+			targetPosition = Vector2(0, -1000)
 			situationAtual = "idleC"
 			$animaco.flip_h = false
 			$animaco.play("runC")
@@ -129,6 +134,7 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("baixo"):
 			input_dir = Vector2(0,1)
+			targetPosition = Vector2(0, 1000)
 			situationAtual = "idle"
 			$animaco.flip_h = false
 			$animaco.play("runB")
