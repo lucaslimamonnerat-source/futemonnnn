@@ -1961,6 +1961,7 @@ text = "Jogo Salvo com Sucesso!!!"
 tab_size = 7
 
 [node name="AudioMenu" type="CanvasLayer" parent="." unique_id=197823498]
+visible = false
 script = ExtResource("5_4ytvr")
 
 [node name="Control" type="Control" parent="AudioMenu" unique_id=1220118674]

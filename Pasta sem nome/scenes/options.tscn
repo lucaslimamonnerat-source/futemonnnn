@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cu4x46lljdffy"]
+
+[node name="Options" type="Control" unique_id=1325350605]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=167449126]
+
+[node name="Button" type="Button" parent="." unique_id=1604498527]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 15.0
+offset_right = 800.0
+offset_bottom = 165.0
+text = "Resolução"
+
+[node name="Button2" type="Button" parent="." unique_id=834186263]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 352.375
+offset_right = 800.0
+offset_bottom = 502.375
+text = "Volume"
+
+[node name="Button3" type="Button" parent="." unique_id=1923751667]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 525.0
+offset_right = 800.0
+offset_bottom = 675.0
+text = "Créditos"
+
+[node name="Button4" type="Button" parent="." unique_id=1690949875]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 185.0
+offset_right = 800.0
+offset_bottom = 334.9993
+text = "Controles
+"

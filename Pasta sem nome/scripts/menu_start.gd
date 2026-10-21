@@ -115,11 +115,12 @@ func _on_continuar_pressed() -> void:
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/home.tscn")
 
-func _on_options_pressed() -> void:
-	pass # Replace with function body.
-
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_button_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_opcoes_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/options.tscn")
