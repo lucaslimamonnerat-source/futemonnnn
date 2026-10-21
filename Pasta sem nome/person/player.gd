@@ -50,12 +50,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 	#if Input.is_action_just_pressed("mLeft"):
 		#targetPosition = get_global_mouse_position()
-	if flash_light and State.batteryLant > 1:
-		if Input.is_action_just_pressed("mRight"):
-			flash_light.enabled = not flash_light.enabled
-			State.batteryOn = not State.batteryOn
-	elif flash_light and State.batteryLant < 1:
-		flash_light.enabled = not flash_light.enabled
+	#if Input.is_action_just_pressed("mRight"):
+		#flash_light.enabled = not flash_light.enabled
 
 func entrou_no_mato(mato):
 	matos.append(mato)
@@ -88,7 +84,7 @@ func interagir_com_porta():
 	SceneTransition.change_scene(cena_destino)
 
 func _process(delta: float) -> void:
-	print(State.batteryLant)
+	#print(State.batteryLant)
 	targetPosition = get_global_mouse_position()
 	
 	if Input.is_action_pressed("sair"):

@@ -7,4 +7,5 @@ var audiomenu_aberto: bool = false
 var amazon = 0
 var playerAtual = ""
 var batteryLant = 100
-var batteryOn = true
+var batteryOn = false
+var carregado = true
