@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://di4m78806k32c"]
 
 [ext_resource type="PackedScene" uid="uid://ckl1gd52trg6f" path="res://scenes/objects/shadow_player.tscn" id="1_krot7"]
-[ext_resource type="Script" uid="uid://sojxua8xw523" path="res://scenes/home.gd" id="1_yxilm"]
+[ext_resource type="Script" uid="uid://sojxua8xw523" path="res://scripts/home.gd" id="1_yxilm"]
 [ext_resource type="Texture2D" uid="uid://dw37t765fxc7v" path="res://sprites/Milena2.0/MilenaIdleAnimation.png" id="2_w18ys"]
 [ext_resource type="Texture2D" uid="uid://7xjviyvfvr0d" path="res://sprites/Iris/1IrisIdle.png" id="3_reixx"]
 [ext_resource type="PackedScene" uid="uid://dske1gb86d374" path="res://scenes/objects/fodareu.tscn" id="4_reixx"]
 [ext_resource type="Texture2D" uid="uid://bdsh0fn44lc4d" path="res://sprites/Inventory/bill.png" id="4_uhids"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
 size = Vector2(252.78577, 362.69287)

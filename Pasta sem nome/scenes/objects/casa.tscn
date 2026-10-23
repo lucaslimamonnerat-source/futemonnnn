@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bm2q5pbxrtrq3"]
 
 [ext_resource type="Texture2D" uid="uid://burl5r2v242xp" path="res://sprites/Cenario/CasaWIP.png" id="1_16s4k"]
-[ext_resource type="PackedScene" uid="uid://b8almicvqiyt0" path="res://scenes/porta.tscn" id="2_l7c5q"]
+[ext_resource type="PackedScene" uid="uid://b8almicvqiyt0" path="res://scenes/objects/porta.tscn" id="2_l7c5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
 size = Vector2(62, 40)

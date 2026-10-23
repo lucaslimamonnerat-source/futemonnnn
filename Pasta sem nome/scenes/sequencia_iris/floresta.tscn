@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://degfgsmmjb8nl" path="res://sprites/Iris/1IrisWalk.png" id="6_6exwj"]
 [ext_resource type="Texture2D" uid="uid://cjc1qbqj4jeya" path="res://sprites/Cenario/light_point.webp" id="10_y7g0e"]
 [ext_resource type="Texture2D" uid="uid://d4folgpg7d1mg" path="res://sprites/Cenario/torch_light.png" id="11_7y2pt"]
-[ext_resource type="PackedScene" uid="uid://b3m4yp8xrtpjp" path="res://scenes/arvore.tscn" id="12_mnwbb"]
+[ext_resource type="PackedScene" uid="uid://b3m4yp8xrtpjp" path="res://scenes/objects/arvore.tscn" id="12_mnwbb"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7sjxx"]
 atlas = ExtResource("2_mnwbb")

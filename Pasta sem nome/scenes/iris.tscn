@@ -12,14 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://cnnfpershgsg3" path="res://sprites/Iris/2IrisSideIdle_rotated.png" id="10_eayh0"]
 [ext_resource type="Texture2D" uid="uid://u3ekgtrj2s84" path="res://sprites/Iris/2IrisSideWalk_rotated.png" id="11_5d16s"]
 [ext_resource type="Texture2D" uid="uid://degfgsmmjb8nl" path="res://sprites/Iris/1IrisWalk.png" id="12_hhgf8"]
-[ext_resource type="Script" uid="uid://ctpj4wm5ptp0j" path="res://scenes/flash_light.gd" id="16_5d16s"]
-[ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="16_625vj"]
-[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="16_eayh0"]
-[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="17_5d16s"]
+[ext_resource type="Script" uid="uid://ctpj4wm5ptp0j" path="res://scripts/flash_light.gd" id="16_5d16s"]
+[ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/objects/casa.tscn" id="16_625vj"]
+[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/actions/menu.tscn" id="16_eayh0"]
+[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/actions/Inventory.tscn" id="17_5d16s"]
 [ext_resource type="Texture2D" uid="uid://cjc1qbqj4jeya" path="res://sprites/Cenario/light_point.webp" id="17_eayh0"]
 [ext_resource type="Texture2D" uid="uid://d4folgpg7d1mg" path="res://sprites/Cenario/torch_light.png" id="18_5d16s"]
 [ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="18_hhgf8"]
-[ext_resource type="PackedScene" uid="uid://dlhj70yi3rm8f" path="res://scenes/hud.tscn" id="20_hhgf8"]
+[ext_resource type="PackedScene" uid="uid://dlhj70yi3rm8f" path="res://scenes/actions/hud.tscn" id="20_hhgf8"]
+
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6br01"]
 

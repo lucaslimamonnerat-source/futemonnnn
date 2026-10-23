@@ -8,11 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://igkbiuwg1eeu" path="res://sprites/Cenario/grama.png" id="4_exfrf"]
 [ext_resource type="Texture2D" uid="uid://ces4grr85v33a" path="res://sprites/Cenario/EscolaWIP.png" id="4_o6kl1"]
 [ext_resource type="Texture2D" uid="uid://dlvmvpw2662jg" path="res://sprites/Cenario/Grama2Escura.png" id="5_c1tb5"]
-[ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="8_1tng7"]
+[ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/objects/casa.tscn" id="8_1tng7"]
 [ext_resource type="PackedScene" uid="uid://dhuw5npy0udy7" path="res://person/player.tscn" id="9_o3lnv"]
 [ext_resource type="PackedScene" uid="uid://dsaobkia0n4j" path="res://person/bush.tscn" id="10_1tng7"]
-[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="11_4qysm"]
-[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="12_74fkb"]
+[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/actions/menu.tscn" id="11_4qysm"]
+[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/actions/Inventory.tscn" id="12_74fkb"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6kl1"]
 texture = ExtResource("1_p5lnq")

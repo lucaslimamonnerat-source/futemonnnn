@@ -1,15 +1,16 @@
 [gd_scene format=4 uid="uid://cs43jcd7u5hp1"]
 
-[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/menu.tscn" id="1_lr6td"]
-[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/Inventory.tscn" id="2_cm3xi"]
+[ext_resource type="PackedScene" uid="uid://xebp7gqm6ufl" path="res://scenes/actions/menu.tscn" id="1_lr6td"]
+[ext_resource type="PackedScene" uid="uid://cowkk0ukxb8fl" path="res://scenes/actions/Inventory.tscn" id="2_cm3xi"]
 [ext_resource type="PackedScene" uid="uid://dhuw5npy0udy7" path="res://person/player.tscn" id="3_rp7ij"]
 [ext_resource type="Texture2D" uid="uid://bmj0siso24i68" path="res://sprites/Cenario/gramaEscura.png" id="4_gs8bu"]
 [ext_resource type="Texture2D" uid="uid://igkbiuwg1eeu" path="res://sprites/Cenario/grama.png" id="5_5mts0"]
 [ext_resource type="Texture2D" uid="uid://6vwh0ql1goko" path="res://sprites/Cenario/Barro.png" id="6_cs6bt"]
 [ext_resource type="Texture2D" uid="uid://c5qda6bt8ha8i" path="res://sprites/Cenario/Grama2.png" id="7_46084"]
-[ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/casa.tscn" id="8_lqpp3"]
+[ext_resource type="PackedScene" uid="uid://bm2q5pbxrtrq3" path="res://scenes/objects/casa.tscn" id="8_lqpp3"]
 [ext_resource type="PackedScene" uid="uid://dsaobkia0n4j" path="res://person/bush.tscn" id="9_fl5ru"]
 [ext_resource type="Texture2D" uid="uid://ces4grr85v33a" path="res://sprites/Cenario/EscolaWIP.png" id="10_sqafs"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w0l6o"]
 texture = ExtResource("4_gs8bu")

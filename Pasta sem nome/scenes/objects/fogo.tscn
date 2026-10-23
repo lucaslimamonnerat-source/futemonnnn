@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://kx32npoxh48p"]
+
+[ext_resource type="Texture2D" uid="uid://cen2amocwv1jl" path="res://sprites/Cenario/campfire_16x16.png" id="1_rkska"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7btsb"]
+atlas = ExtResource("1_rkska")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u0lu"]
+atlas = ExtResource("1_rkska")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp8xm"]
+atlas = ExtResource("1_rkska")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lof7p"]
+atlas = ExtResource("1_rkska")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8w0r3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7btsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0u0lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp8xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lof7p")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Fogareu" type="StaticBody2D" unique_id=2040263482]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=221886797]
+sprite_frames = SubResource("SpriteFrames_8w0r3")
+frame_progress = 0.10526548

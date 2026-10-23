@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c4qhadqcxvyek" path="res://sprites/Inventory/InventoryRect.png" id="1_yqeox"]
 [ext_resource type="FontFile" uid="uid://db377vhd2sd2x" path="res://sprites/fonts/pokemon_pixel_font.ttf" id="2_vjb58"]
 [ext_resource type="Script" uid="uid://blmax8wwbug3x" path="res://scripts/audio_menu.gd" id="5_4ytvr"]
-[ext_resource type="Script" uid="uid://bxqst0n55a13k" path="res://scenes/rich_text_label_2.gd" id="6_g3eks"]
+[ext_resource type="Script" uid="uid://bxqst0n55a13k" path="res://scripts/rich_text_label_2.gd" id="6_g3eks"]
 [ext_resource type="Texture2D" uid="uid://s8gnyldysuk4" path="res://sprites/Inventory/seta.png" id="7_v86rl"]
+
 
 [sub_resource type="FontVariation" id="FontVariation_con2f"]
 base_font = ExtResource("2_vjb58")
