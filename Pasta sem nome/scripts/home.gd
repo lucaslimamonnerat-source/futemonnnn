@@ -49,23 +49,35 @@ func carregar_personagens(node: Node) -> void:
 			carregar_personagens(child)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		# Atalho para voltar ao menu inicial com X ou Backspace
+		if event.physical_keycode == KEY_X or event.physical_keycode == KEY_BACKSPACE:
+			_on_voltar_pressed()
+			var vp = get_viewport()
+			if vp:
+				vp.set_input_as_handled()
+			return
+
 	if personagens.is_empty():
 		return
 		
 	var direcao = Vector2.ZERO
 	
-	# Suporte a W, A, S, D e Setas direcionais
-	if event.is_action_pressed("ui_up") or event.is_pressed() and (event is InputEventKey and event.keycode == KEY_W):
+	# Suporte a W, A, S, D físicos e setas direcionais
+	if event.is_action_pressed("ui_up") or (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_W):
 		direcao = Vector2.UP
-	elif event.is_action_pressed("ui_down") or event.is_pressed() and (event is InputEventKey and event.keycode == KEY_S):
+	elif event.is_action_pressed("ui_down") or (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_S):
 		direcao = Vector2.DOWN
-	elif event.is_action_pressed("ui_left") or event.is_pressed() and (event is InputEventKey and event.keycode == KEY_A):
+	elif event.is_action_pressed("ui_left") or (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_A):
 		direcao = Vector2.LEFT
-	elif event.is_action_pressed("ui_right") or event.is_pressed() and (event is InputEventKey and event.keycode == KEY_D):
+	elif event.is_action_pressed("ui_right") or (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_D):
 		direcao = Vector2.RIGHT
 		
 	if direcao != Vector2.ZERO:
 		encontrar_proximo_por_direcao(direcao)
+		var vp = get_viewport()
+		if vp:
+			vp.set_input_as_handled()
 		
 	if event.is_action_pressed("ui_accept"):
 		ativar_personagem(personagens[indice_selecionado])
@@ -93,7 +105,7 @@ func encontrar_proximo_por_direcao(dir: Vector2) -> void:
 		atualizar_selecao(melhor_indice)
 
 func atualizar_selecao(novo_indice: int) -> void:
-	# Toca o som de foco APENAS se o índice realmente mudou (não toca no _ready)
+	# Toca o som de foco APENAS se o índice realmente mudou
 	if novo_indice != indice_selecionado and audio_foco.stream:
 		audio_foco.play()
 
@@ -104,7 +116,6 @@ func atualizar_selecao(novo_indice: int) -> void:
 	animar_personagem(personagens[indice_selecionado], escala_focado)
 
 func animar_personagem(personagem: Area2D, escala_alvo: Vector2) -> void:
-	# Anima APENAS a escala, mantendo as cores originais intactas (sem brilho)
 	var tween = create_tween()
 	tween.tween_property(personagem, "scale", escala_alvo, tempo_animacao).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 
@@ -114,21 +125,22 @@ func _on_personagem_input_event(_viewport: Node, event: InputEvent, _shape_idx: 
 		var index = personagens.find(personagem)
 		if index != -1:
 			atualizar_selecao(index)
-			ativar_personagem(personagem) # Manda direto pro mundo do personagem
+			ativar_personagem(personagem)
 
 func ativar_personagem(personagem: Area2D) -> void:
-	# 1. Manda o MusicManager fazer o fade out de 2 segundos
 	MusicManager.parar_musica_com_fadeout(2.0)
 	
-	# 2. Toca o som de confirmação
 	if audio_selecao.stream:
 		var temp_player = AudioStreamPlayer.new()
 		temp_player.stream = audio_selecao.stream
-		temp_player.volume_db = -4.5 # <--- AQUI! Abaixa o volume para ~60%
+		temp_player.volume_db = -4.5
 		tree_ref.root.add_child(temp_player)
 		temp_player.play()
 		temp_player.finished.connect(temp_player.queue_free)
 		
-	# 3. Muda de cena imediatamente
 	if "ir" in personagem and personagem.ir != "":
 		tree_ref.change_scene_to_file("res://scenes/" + personagem.ir)
+
+# Função para voltar ao menu inicial ao apertar X ou Backspace
+func _on_voltar_pressed() -> void:
+	tree_ref.change_scene_to_file("res://scenes/menu_start.tscn")

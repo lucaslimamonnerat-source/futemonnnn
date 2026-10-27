@@ -27,6 +27,9 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiqld"]
+shadow_size = 6
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jmj5"]
 border_width_left = 1
 border_width_top = 1
@@ -82,6 +85,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4jmj5")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_egsp4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oiqld")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4jmj5")
 text = "AI DENTO"
 

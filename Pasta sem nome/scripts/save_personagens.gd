@@ -37,10 +37,13 @@ func _ready() -> void:
 		btn_milena.grab_focus() # Fallback
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed:
-		# Verifica se a tecla pressionada é o ESC
-		if event.keycode == KEY_ESCAPE:
+	if event is InputEventKey and event.pressed and not event.echo:
+		# Verifica se a tecla pressionada é ESC ou X para voltar
+		if event.physical_keycode == KEY_ESCAPE or event.physical_keycode == KEY_X:
 			get_tree().change_scene_to_file("res://scenes/menu_start.tscn")
+			var vp = get_viewport()
+			if vp:
+				vp.set_input_as_handled()
 			return
 
 		# Suporte a WASD e Setinhas para navegar entre os botões
@@ -48,26 +51,34 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not focused is Button:
 			return
 		
-		if event.keycode == KEY_W or event.keycode == KEY_UP:
+		if event.physical_keycode == KEY_W or event.physical_keycode == KEY_UP:
 			var next_node = focused.find_valid_focus_neighbor(SIDE_TOP)
 			if next_node:
 				next_node.grab_focus()
-				get_viewport().set_input_as_handled()
-		elif event.keycode == KEY_S or event.keycode == KEY_DOWN:
+				var vp = get_viewport()
+				if vp:
+					vp.set_input_as_handled()
+		elif event.physical_keycode == KEY_S or event.physical_keycode == KEY_DOWN:
 			var next_node = focused.find_valid_focus_neighbor(SIDE_BOTTOM)
 			if next_node:
 				next_node.grab_focus()
-				get_viewport().set_input_as_handled()
-		elif event.keycode == KEY_A or event.keycode == KEY_LEFT:
+				var vp = get_viewport()
+				if vp:
+					vp.set_input_as_handled()
+		elif event.physical_keycode == KEY_A or event.physical_keycode == KEY_LEFT:
 			var next_node = focused.find_valid_focus_neighbor(SIDE_LEFT)
 			if next_node:
 				next_node.grab_focus()
-				get_viewport().set_input_as_handled()
-		elif event.keycode == KEY_D or event.keycode == KEY_RIGHT:
+				var vp = get_viewport()
+				if vp:
+					vp.set_input_as_handled()
+		elif event.physical_keycode == KEY_D or event.physical_keycode == KEY_RIGHT:
 			var next_node = focused.find_valid_focus_neighbor(SIDE_RIGHT)
 			if next_node:
 				next_node.grab_focus()
-				get_viewport().set_input_as_handled()
+				var vp = get_viewport()
+				if vp:
+					vp.set_input_as_handled()
 
 func _on_button_milena_pressed() -> void:
 	State.playerAtual = "Milena"
