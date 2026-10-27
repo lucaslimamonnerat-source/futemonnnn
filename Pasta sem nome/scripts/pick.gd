@@ -7,7 +7,14 @@ var life = 0
 
 func action() -> void:
 	
-	State.axe_state = 1
+	if item_name == "Machado":
+		State.axe_state = 1
+	elif item_name == "Bateria":
+		if State.batteryLant >= 99:
+			print("ababa")
+			return
+		else:
+			State.batteryLant += 2
 	
 	if get_parent():
 		get_parent().queue_free()

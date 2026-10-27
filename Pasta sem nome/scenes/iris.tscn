@@ -20,7 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://d4folgpg7d1mg" path="res://sprites/Cenario/torch_light.png" id="18_5d16s"]
 [ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="18_hhgf8"]
 [ext_resource type="PackedScene" uid="uid://dlhj70yi3rm8f" path="res://scenes/actions/hud.tscn" id="20_hhgf8"]
-
+[ext_resource type="PackedScene" uid="uid://xexnllv60go2" path="res://scenes/actions/pick.tscn" id="21_3aj7v"]
+[ext_resource type="Texture2D" uid="uid://sc6nkttbqjv2" path="res://sprites/Inventory/ababa.png" id="22_3xjck"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6br01"]
 
@@ -2621,6 +2622,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
+size = Vector2(4.0609136, 6.0913706)
+
 [node name="Iris" type="Node2D" unique_id=1708966372]
 scale = Vector2(0.985, 0.985)
 
@@ -2680,3 +2684,17 @@ script = ExtResource("16_5d16s")
 [node name="Panel" parent="player" unique_id=1711709439 instance=ExtResource("18_hhgf8")]
 
 [node name="HUD" parent="." unique_id=816163966 instance=ExtResource("20_hhgf8")]
+
+[node name="baterry" type="StaticBody2D" parent="." unique_id=924052177]
+position = Vector2(88.32487, 28.426395)
+
+[node name="pick" parent="baterry" unique_id=1123286511 instance=ExtResource("21_3aj7v")]
+item_name = "Bateria"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="baterry/pick" unique_id=1689012425]
+position = Vector2(6.051233e-08, 0)
+shape = SubResource("RectangleShape2D_86ap7")
+
+[node name="Sprite2D" type="Sprite2D" parent="baterry" unique_id=1073246493]
+scale = Vector2(0.03180095, 0.03180095)
+texture = ExtResource("22_3xjck")

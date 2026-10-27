@@ -46,7 +46,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			if actionables[0].life == 0:
 				Inv.picked(actionables[0].item_name)
 				inventory = Inv.items
-				Inventory._novo_item(batata)
 			return
 	#if Input.is_action_just_pressed("mLeft"):
 		#targetPosition = get_global_mouse_position()

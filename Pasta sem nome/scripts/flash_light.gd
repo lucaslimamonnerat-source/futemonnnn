@@ -12,6 +12,9 @@ func _process(delta: float) -> void:
 	if State.carregado == false or State.batteryOn == false:
 		enabled = false
 	
+	if State.batteryLant != 0:
+		State.carregado = true
+	
 	if State.batteryOn == true and State.carregado:
 		# Acumula o tempo a cada frame
 		tempo_decorrido += delta
