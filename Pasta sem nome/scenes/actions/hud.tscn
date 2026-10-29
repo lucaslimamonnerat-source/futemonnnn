@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://dlhj70yi3rm8f"]
 
 [ext_resource type="Script" uid="uid://p5hdsovxoop1" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://fh6xi23qnpcf" path="res://sprites/Butoes/switchBtm.png" id="2_jo0o2"]
+[ext_resource type="Texture2D" uid="uid://djof0ovxdecq" path="res://sprites/Butoes/runBtm.png" id="3_0x385"]
+[ext_resource type="Texture2D" uid="uid://cq4qsablf0x8n" path="res://sprites/Butoes/bagBtm.png" id="4_ra51c"]
+[ext_resource type="Texture2D" uid="uid://btn1vf4ctxu1o" path="res://sprites/Butoes/atqBtm.png" id="5_lmcpb"]
 
 [sub_resource type="FontFile" id="FontFile_4cgrj"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -27,6 +34,57 @@ cache/0/48/0/scale = 1.0
 font = SubResource("FontFile_4cgrj")
 font_size = 48
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut6ln"]
+atlas = ExtResource("2_jo0o2")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d024j"]
+atlas = ExtResource("3_0x385")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32qtj"]
+atlas = ExtResource("4_ra51c")
+region = Rect2(0, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fku2m"]
+atlas = ExtResource("5_lmcpb")
+region = Rect2(0, 0, 192, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8w0r3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut6ln")
+}],
+"loop": 1,
+"name": &"cabando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d024j")
+}],
+"loop": 1,
+"name": &"carregado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32qtj")
+}],
+"loop": 1,
+"name": &"menos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fku2m")
+}],
+"loop": 1,
+"name": &"zerado",
+"speed": 5.0
+}]
+
 [node name="HUD" type="CanvasLayer" unique_id=816163966]
 script = ExtResource("1_ahhtf")
 
@@ -42,3 +100,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Moedas: 0"
 label_settings = SubResource("LabelSettings_kw35o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=168463854]
+position = Vector2(23.999998, 78.99999)
+scale = Vector2(0.34134614, 0.34134614)
+sprite_frames = SubResource("SpriteFrames_8w0r3")
+animation = &"cabando"
