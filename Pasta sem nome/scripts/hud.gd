@@ -11,7 +11,9 @@ func _process(delta: float) -> void:
 		sprite_anim.play("carregado")
 	elif State.batteryLant < 70 and State.batteryLant >= 30:
 		sprite_anim.play("cabando")
-	elif State.batteryLant < 30 and State.batteryLant >= 1:
+	elif State.batteryLant < 30 and State.batteryLant >= 11:
 		sprite_anim.play("menos")
-	elif State.batteryLant == 0 :
+	elif State.batteryLant < 11 and State.batteryLant >= 1:
 		sprite_anim.play("zerado")
+	elif State.batteryLant == 0 :
+		sprite_anim.play("cabo")
