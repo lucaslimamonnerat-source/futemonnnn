@@ -185,7 +185,9 @@ func _close_menu():
 		about.visible = false
 	State.menu_aberto = false
 	select_arrow.visible = true
-	screen_loaded = ScreenLoaded.JUST_MENU
+	
+	# Mude de JUST_MENU para NOTHING para que o input pare de processar as opções do menu fechado
+	screen_loaded = ScreenLoaded.NOTHING 
 	selected_option = 0
 
 func _on_audio_menu_closed() -> void:
