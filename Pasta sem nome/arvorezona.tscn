@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://hvygrqbbocol"]
+
+[ext_resource type="Texture2D" uid="uid://betyb4eqxhd0t" path="res://sprites/Cenario/Arvorezona.png" id="1_83tja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
+size = Vector2(83, 131)
+
+[node name="arvorezona" type="StaticBody2D" unique_id=120253060]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=570651433]
+shape = SubResource("RectangleShape2D_86ap7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=867825763]
+y_sort_enabled = true
+scale = Vector2(0.48611113, 0.5138889)
+texture = ExtResource("1_83tja")

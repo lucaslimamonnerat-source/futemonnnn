@@ -23,28 +23,39 @@ func _ready():
 		cena_destino = "res://scenes/inicio.tscn"
 	print("   cena_destino = ", cena_destino)
 
+	# Garante que o sprite da porta comece invisível ao iniciar a cena
 	if has_node("CasaWip"):
 		$CasaWip.visible = false
 
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	# Garante que as conexões não sejam duplicadas
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
+	if not body_exited.is_connected(_on_body_exited):
+		body_exited.connect(_on_body_exited)
 
 	print("cena_destino definido para: ", cena_destino)
 
 func abrir_porta():
+	# Torna o sprite visível apenas no momento em que o player interage
 	if has_node("CasaWip"):
 		$CasaWip.visible = true
+		print("Sprite da porta ativado/exibido.")
 
 func _on_body_entered(body):
+	print(">>> Corpo detectado na área da porta: ", body.name)
 	if body.is_in_group("player"):
 		player_perto = true
 		body.porta_proxima = self
 		body.cena_destino = cena_destino
+		print("   Player vinculado à porta com sucesso! Destino: ", cena_destino)
+	else:
+		print("   Ignorado: O corpo não é o player.")
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_perto = false
 		body.porta_proxima = null
+		print("   Player afastou-se da porta.")
 
 func preparar_transicao():
 	var cena_atual = get_tree().current_scene.scene_file_path
@@ -59,5 +70,5 @@ func preparar_transicao():
 		# Estamos SAINDO da casa: define posição pendente para o jogador
 		Game.pending_player_position = Game.ponto_retorno
 		Game.has_pending_position = true
-		Game.vindo_da_casa = true  # ainda pode ser útil para outras lógicas
+		Game.vindo_da_casa = true  
 		print("   Definindo pending_position = ", Game.pending_player_position)

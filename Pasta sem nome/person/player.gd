@@ -1,10 +1,11 @@
 extends CharacterBody2D
+
 @onready var ground_detector: RayCast2D = $GroundDetector
 @onready var playerWalkingAudioStream = $playerandando
 @onready var playerBatendoAudioStream = $playerbatendo
 @export var atualPlayer = ""
 
-# Áudios dos terrenos (substitua pelos caminhos reais)
+# Áudios dos terrenos
 var grass_audio = preload("res://efeitosonoros/player_walking.mp3")
 var concrete_audio = preload("res://efeitosonoros/12_Step_wood_03.wav")
 
@@ -19,6 +20,7 @@ var porta_proxima = null
 var interagindo = false
 var batata = load("res://sprites/Inventory/Axe.png")
 var cena_destino = ""
+
 @onready var flash_light: PointLight2D = $flashLight
 var inventory = Inv.items
 @onready var actionable_finder: Area2D = $Direction/ActionableFinger
@@ -26,15 +28,9 @@ var inventory = Inv.items
 var targetPosition: Vector2
 
 func _ready():
-	
 	State.playerAtual = atualPlayer
 	randomize()
 	print(">>> Jogador _ready. Game.vindo_da_casa=", Game.vindo_da_casa, " Game.ponto_retorno=", Game.ponto_retorno)
-
-	# Aumenta o tamanho apenas se o personagem atual for a Íris
-	#if atualPlayer == "Iris":
-		#scale = Vector2(6.0, 6.0)
-	# VELOCIDADE agora é definida individualmente pelo inspetor em cada personagem
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
@@ -47,10 +43,6 @@ func _unhandled_input(event: InputEvent) -> void:
 				Inv.picked(actionables[0].item_name)
 				inventory = Inv.items
 			return
-	#if Input.is_action_just_pressed("mLeft"):
-		#targetPosition = get_global_mouse_position()
-	#if Input.is_action_just_pressed("mRight"):
-		#flash_light.enabled = not flash_light.enabled
 
 func entrou_no_mato(mato):
 	matos.append(mato)
@@ -79,11 +71,18 @@ func interagir_com_porta():
 		porta_proxima.preparar_transicao()
 
 	await get_tree().create_timer(0.3).timeout
-	print("Trocando para cena: ", cena_destino)
-	SceneTransition.change_scene(cena_destino)
+	
+	var destino_final = cena_destino
+	if destino_final == "" and porta_proxima:
+		destino_final = porta_proxima.cena_destino
+		
+	print("Trocando para cena: ", destino_final)
+	if destino_final != "":
+		SceneTransition.change_scene(destino_final)
+	else:
+		print("ERRO: Nenhuma cena de destino definida para a porta!")
 
 func _process(delta: float) -> void:
-	#print(State.batteryLant)
 	targetPosition = get_global_mouse_position()
 	
 	if Input.is_action_pressed("sair"):
@@ -92,15 +91,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ataque") and porta_proxima != null and not interagindo:
 		interagir_com_porta()
 
-	# 🔄 Atualiza o som do terreno continuamente (mesmo quando está andando)
 	check_ground_type()
-	
 
-	if flash_light:
-		if targetPosition:
-			flash_light.look_at(targetPosition)
-	#else:
-		#print("n achado")
+	if flash_light and targetPosition:
+		flash_light.look_at(targetPosition)
 	
 	if podeAndar == 1:
 		if moving:
@@ -108,7 +102,6 @@ func _process(delta: float) -> void:
 		input_dir = Vector2.ZERO
 		if Input.is_action_pressed("direita"):
 			input_dir = Vector2(1,0)
-			#targetPosition = Vector2(1000, 0)
 			situationAtual = "idleL"
 			$animaco.flip_h = false
 			$animaco.play("run")
@@ -117,7 +110,6 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("esquerda"):
 			input_dir = Vector2(-1,0)
-			#targetPosition = Vector2(-1000, 0)
 			situationAtual = "idleL"
 			$animaco.flip_h = true
 			$animaco.play("run")
@@ -126,7 +118,6 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("cima"):
 			input_dir = Vector2(0,-1)
-			#targetPosition = Vector2(0, -1000)
 			situationAtual = "idleC"
 			$animaco.flip_h = false
 			$animaco.play("runC")
@@ -135,7 +126,6 @@ func _process(delta: float) -> void:
 			move()
 		elif Input.is_action_pressed("baixo"):
 			input_dir = Vector2(0,1)
-			#targetPosition = Vector2(0, 1000)
 			situationAtual = "idle"
 			$animaco.flip_h = false
 			$animaco.play("runB")
@@ -143,12 +133,10 @@ func _process(delta: float) -> void:
 			marcado.position.y = 0
 			move()
 		else:
-			# Nenhuma tecla de direção → para o som de passos
 			if playerWalkingAudioStream.playing:
 				playerWalkingAudioStream.stop()
 			$animaco.play(situationAtual)
 	else:
-		# Se não pode andar, também para o som
 		if playerWalkingAudioStream.playing:
 			playerWalkingAudioStream.stop()
 		$animaco.play("idle")
@@ -164,13 +152,11 @@ func move():
 			moving = false
 			return
 		moving = true
-		# Toca o som de passos se ainda não estiver tocando
+		
 		if !playerWalkingAudioStream.playing:
 			playerWalkingAudioStream.play()
 			
 		var destino = position + input_dir * title_size
-		
-		# 💡 Calcula a duração com base na VELOCIDADE (Distância / Velocidade)
 		var duracao = float(title_size) / float(VELOCIDADE)
 		
 		var tween = create_tween()
@@ -191,7 +177,6 @@ func check_ground_type():
 		var tile_data = collider.get_cell_tile_data(0, cell)
 		if tile_data:
 			var terrain = tile_data.get_custom_data("terrain_type")
-			print("Terreno detectado: ", terrain)  # <-- PRINT DE DEBUG
 			match terrain:
 				"grass":
 					update_walking_audio(grass_audio)

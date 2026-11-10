@@ -3,10 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://burl5r2v242xp" path="res://sprites/Cenario/CasaWIP.png" id="1_16s4k"]
 [ext_resource type="PackedScene" uid="uid://b8almicvqiyt0" path="res://scenes/objects/porta.tscn" id="2_l7c5q"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1x6cg"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
 size = Vector2(62, 40)
 
 [node name="Casa" type="StaticBody2D" unique_id=1167718415]
+physics_material_override = SubResource("PhysicsMaterial_1x6cg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270998772]
 position = Vector2(252, 217)
