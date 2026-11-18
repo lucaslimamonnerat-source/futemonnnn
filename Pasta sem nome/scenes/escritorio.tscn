@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://lfqeacsgcmrn" path="res://sprites/Milena2.0/MilenaFrontWalk.png" id="10_fhdqw"]
 [ext_resource type="Texture2D" uid="uid://bepprq88ri2g0" path="res://sprites/Milena2.0/MilenaBackWalk.png" id="11_xrvi5"]
 [ext_resource type="PackedScene" uid="uid://fg4ehg7q57oa" path="res://scenes/objects/about.tscn" id="12_rokrc"]
+[ext_resource type="PackedScene" uid="uid://b8almicvqiyt0" path="res://scenes/objects/porta.tscn" id="13_pdsfl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm07w"]
 texture = ExtResource("1_s8i67")
@@ -14646,6 +14647,15 @@ size = Vector2(1.9800001, 0.39999998)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjuo2"]
 size = Vector2(0.43999958, 0.46500015)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx5ia"]
+size = Vector2(2.4297166, 2.4398484)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxx5g"]
+size = Vector2(194.25, 26.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_th8uf"]
+size = Vector2(20, 17)
+
 [node name="Escritorio" type="Node2D" unique_id=1397630322]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=507489172]
@@ -14656,7 +14666,7 @@ tile_set = SubResource("TileSet_86ap7")
 [node name="player" parent="." unique_id=1550785553 instance=ExtResource("3_pdsfl")]
 z_index = 1000
 position = Vector2(-14, -351)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.1002877, 2.1002877)
 atualPlayer = "Milena"
 VELOCIDADE = 100
 
@@ -14683,6 +14693,36 @@ animation = &"runB"
 
 [node name="Panel" parent="player" unique_id=1711709439 instance=ExtResource("12_rokrc")]
 
+[node name="player2" parent="." unique_id=1894290119 instance=ExtResource("3_pdsfl")]
+z_index = 1000
+position = Vector2(-14, -351)
+scale = Vector2(2.1002877, 2.1002877)
+atualPlayer = "Milena"
+VELOCIDADE = 100
+
+[node name="Camera2D2" type="Camera2D" parent="player2" unique_id=1634375721]
+position = Vector2(0.6525879, 2.0007782)
+rotation = -0.5014508
+scale = Vector2(0.6666667, 0.6666667)
+skew = 1.5690356
+zoom = Vector2(4, 4)
+limit_enabled = false
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="Menu" parent="player2" unique_id=1742651405 instance=ExtResource("4_ooc2v")]
+
+[node name="CanvasLayer" parent="player2" unique_id=690585063 instance=ExtResource("5_6h38i")]
+
+[node name="animaco" type="AnimatedSprite2D" parent="player2" unique_id=1159833077]
+texture_filter = 1
+position = Vector2(0, -2)
+scale = Vector2(0.11458333, 0.11458333)
+sprite_frames = SubResource("SpriteFrames_efhpu")
+animation = &"runB"
+
+[node name="Panel" parent="player2" unique_id=854757820 instance=ExtResource("12_rokrc")]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=595637348]
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1622797040]
@@ -14705,8 +14745,8 @@ shape = SubResource("RectangleShape2D_8imwq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1785178560]
 material = SubResource("ShaderMaterial_01o3i")
-position = Vector2(-194, -282)
-scale = Vector2(1.8684001, 1.8684001)
+position = Vector2(-199.00002, -184)
+scale = Vector2(2.74888, 0.8828989)
 shape = SubResource("RectangleShape2D_86ap7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=867559274]
@@ -14860,3 +14900,50 @@ shape = SubResource("RectangleShape2D_mjuo2")
 position = Vector2(322, -299)
 scale = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_mjuo2")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=1003865724]
+position = Vector2(-25.999998, -75.99999)
+rotation = -1.579523
+scale = Vector2(25.128, 25.128)
+shape = SubResource("RectangleShape2D_qx5ia")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=1420971933]
+position = Vector2(21.999998, -98)
+rotation = -1.579523
+scale = Vector2(25.128, 25.128)
+shape = SubResource("RectangleShape2D_qx5ia")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=550425159]
+position = Vector2(-72.99999, -98)
+rotation = -1.579523
+scale = Vector2(25.128, 25.128)
+shape = SubResource("RectangleShape2D_qx5ia")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=1050432406]
+position = Vector2(51, -408.875)
+shape = SubResource("RectangleShape2D_jxx5g")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=1721654662]
+position = Vector2(-54.125, -412)
+shape = SubResource("RectangleShape2D_jxx5g")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=935587735]
+position = Vector2(-94, -383)
+shape = SubResource("RectangleShape2D_th8uf")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D" unique_id=1199348380]
+position = Vector2(93, -377.5)
+shape = SubResource("RectangleShape2D_th8uf")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D" unique_id=2047285892]
+position = Vector2(114, -361)
+shape = SubResource("RectangleShape2D_th8uf")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D" unique_id=517417072]
+position = Vector2(6, -379)
+shape = SubResource("RectangleShape2D_th8uf")
+
+[node name="Porta" parent="." unique_id=837879500 instance=ExtResource("13_pdsfl")]
+position = Vector2(-228, -322)
+rotation = -1.5416353
+cena_destino = "res://scenes/inicio.tscn"
