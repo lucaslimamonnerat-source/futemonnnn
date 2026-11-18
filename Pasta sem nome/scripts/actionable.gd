@@ -5,6 +5,7 @@ extends Area2D
 @export var dialogue_start: String = "start"
 @export var life = 1
 
+#que saudades da minha prima
 
 func _process(delta: float) -> void:
 	if life != 1:
